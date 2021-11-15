@@ -20,29 +20,45 @@ namespace Grupparbete_Marshall.Methods
             //user id saknas
 
             Console.Write("Ange ditt namn: ");
+            user.Name = Console.ReadLine();
+
+
+            Console.Write("Ange din ålder: ");
+
             try
             {
-                user.Name = Console.ReadLine();
+                //user.Age = Convert.ToInt32(Console.ReadLine());
+                user.Age = int.Parse(Console.ReadLine());
             }
             catch
             {
                 Console.WriteLine("Det var inte en korrekt input, försök igen..");
             }
 
-
-            Console.Write("Ange din ålder: ");
-            user.Age = Convert.ToInt32(Console.ReadLine());
             //try user age int parse googla det
-            //c försök igen
             //ev loop.
 
             Console.Write("Ange din Gatuaderss: ");
-            user.StreetAddress = Console.ReadLine();
+            try
+            {
+                user.StreetAddress = Console.ReadLine();
+            }
+            catch
+            {
+                Console.WriteLine("Det var inte en korrekt input, försök igen..");
+            }
 
             Console.Write("Ange ditt Postnummer: ");
-            user.PostNumber = Convert.ToInt32(Console.ReadLine());
+            try
+            {
+               // user.PostNumber = Convert.ToInt32(Console.ReadLine());
+                user.PostNumber = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Det var inte en korrekt input, försök igen..");
+            }
 
-            // Antal sökningar - osäker om de ska vara här
             //Console.Write("Antal sökningar: ");
             user.NumberOfSearch = 0;
 
@@ -54,7 +70,7 @@ namespace Grupparbete_Marshall.Methods
             //Console.Write("Antal borttappade tändare: ");
             user.LostLighters = 0;
 
-            //Lists.UserList.userList.Add(user);
+            Lists.UserList.userList.Add(user);
         }
 
 
