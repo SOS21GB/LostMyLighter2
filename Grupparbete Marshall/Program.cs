@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 
 namespace Grupparbete_Marshall
 {
@@ -6,8 +7,10 @@ namespace Grupparbete_Marshall
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            
+            Menus.Startmenu start = new Menus.Startmenu();
+            start.Start();
+
+
         }
     }
 }
