@@ -8,10 +8,8 @@ namespace Grupparbete_Marshall.Menus
 {
     class MarschallMenu
     {
-        List<Marschall> all;
-        List<Marschall> active;
-
-        static void Main(string[] args)
+        
+        static void Run(List<Marschall> all)
         {
 
             Console.WriteLine("Tryck '1' för att se aktiva marschaller");
@@ -20,6 +18,11 @@ namespace Grupparbete_Marshall.Menus
             int.TryParse(Console.ReadLine(), out select) == 1
             if (select == 1)
             {
+                List<Marschall> active =
+                from x in all
+                where DateTime.Compare(x.Burnout, DateTime.Now) > 0
+                select x;
+                
                 foreach (Marschall m in active)
                 {
                     Console.WriteLine(m.Print());

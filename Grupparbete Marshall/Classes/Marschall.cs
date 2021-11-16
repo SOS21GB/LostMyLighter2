@@ -18,6 +18,11 @@ namespace Grupparbete_Marshall.Classes
         int streetNumber;
         String region;
         int postalCode;
+        
+        public DateTime Burnout { 
+            get {   return burnout;   } 
+            set {   burnout = value;  }
+        }
 
         public Marchall(User user, String sName, int sNumber, String sRegion, int pCode, double bTime)
         {
