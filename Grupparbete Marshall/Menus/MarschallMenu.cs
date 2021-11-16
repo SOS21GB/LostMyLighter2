@@ -8,10 +8,8 @@ namespace Grupparbete_Marshall.Menus
 {
     class MarschallMenu
     {
-        List<Marschall> all;
-        List<Marschall> active;
-
-        static void Run(User me)
+        
+        static void Run(User me, List<Marschall> all)
         {
             int select = 0;
             do {
@@ -47,10 +45,15 @@ namespace Grupparbete_Marshall.Menus
                     String sBrand = Console.ReadLine();
                     if (sBrand.Equals("")) { sBrand = "unknown"; }
 
-                    // TODO:  add MarschallList.Add()
-                    new Marschall(me, sBrand, sa, sb, sc, sd, sBurn); // add to MarschallList
+                    // TODO:  add MarschallList.Add()  
+                    new Marschall(me, sBrand, sa, sb, sc, sd, sBurn); // add to MarschallList  
                     break;
                 case 2:
+                    IEnumerable<Marschall> active =
+                        from x in all
+                        where DateTime.Compare(x.BurnTime, DateTime.Now)
+                        select x;
+
                     foreach (Marschall m in active)
                     {
                         Console.WriteLine(m.Print());
