@@ -49,7 +49,7 @@ namespace Grupparbete_Marshall.Menus
                     new Marschall(me, sBrand, sa, sb, sc, sd, sBurn); // add to MarschallList  
                     break;
                 case 2:
-                    List <Marschall> active =
+                    IEnumerable<Marschall> active =
                         from x in all
                         where DateTime.Compare(x.BurnTime, DateTime.Now)
                         select x;
