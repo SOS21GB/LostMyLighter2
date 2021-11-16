@@ -3,34 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Grupparbete_Marshall.Classes;
 
 namespace Grupparbete_Marshall.Menus
 {
     class MarschallMenu
     {
-        List<Marschall> all;
+        /* List<Classes.Marschall> all;
         List<Marschall> active;
 
         static void Run(User me)
         {
             int select = 0;
             do {
-                Console.WriteLine("Tryck '1' för att lägga till marschall");
-                Console.WriteLine("Tryck '2' för att se aktiva marschaller");
-                Console.WriteLine("Tryck '3' för att se alla marschaller");               
+                Console.WriteLine("Tryck '1' f?r att l?gga till marschall");
+                Console.WriteLine("Tryck '2' f?r att se aktiva marschaller");
+                Console.WriteLine("Tryck '3' f?r att se alla marschaller");               
             } while (!int.TryParse(Console.ReadLine(), out select));
             switch (select)
+
+
+            Console.WriteLine("Tryck '1' f?r att se aktiva marschaller");
+            Console.WriteLine("Tryck '2' f?r att se alla marschaller");
+            int select = 0;
+            int.TryParse(Console.ReadLine(), out select) == 1;
+            if (select == 1)
+            {
+                foreach (Marschall m in active)
+                {
+                    Console.WriteLine(m.Print());
+                }
+            }
+            else
             {
                 case 1:
-                    Console.WriteLine("på vilken gata är marschallen?");
+                    Console.WriteLine("p? vilken gata ?r marschallen?");
                     String sa = Console.ReadLine();
                     
                     int sb = 0;
                     do {
-                        Console.WriteLine("på vilket husnummer är marschallen?");
+                        Console.WriteLine("p? vilket husnummer ?r marschallen?");
                     } while (int.TryParse(Console.ReadLine(), out sb))
                     
-                    Console.WriteLine("i vilken kommun är marschallen?");
+                    Console.WriteLine("i vilken kommun ?r marschallen?");
                     String sc = Console.ReadLine();
                    
                     int sd = 0;
@@ -40,10 +55,10 @@ namespace Grupparbete_Marshall.Menus
 
                         
                     double sBurn = 60.0 // minutes, default
-                    Console.WriteLine("hur länge tror du att den brinner?");
+                    Console.WriteLine("hur l?nge tror du att den brinner?");
                     double.TryParse(Console.ReadLine(), out sBurn); // default:  60 minutes
 
-                    Console.WriteLine("vad är det för märke? (tom sträng om osäker)");
+                    Console.WriteLine("vad ?r det f?r m?rke? (tom str?ng om os?ker)");
                     String sBrand = Console.ReadLine();
                     if (sBrand.Equals("")) { sBrand = "unknown"; }
 
@@ -63,6 +78,7 @@ namespace Grupparbete_Marshall.Menus
                     }
             }
         }
+        */
 
     }
 }
