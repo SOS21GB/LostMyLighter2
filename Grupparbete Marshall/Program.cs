@@ -7,9 +7,11 @@ namespace Grupparbete_Marshall
     {
         static void Main(string[] args)
         {
+
             Menus.Startmenu start = new Menus.Startmenu();
             start.Start();
-
+          
+            Lists.UserList.InitializeUserList();            
 
         }
     }
