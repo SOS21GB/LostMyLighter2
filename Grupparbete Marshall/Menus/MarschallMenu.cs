@@ -45,8 +45,8 @@ namespace Grupparbete_Marshall.Menus
                     String sBrand = Console.ReadLine();
                     if (sBrand.Equals("")) { sBrand = "unknown"; }
 
-                    // TODO:  add MarschallList.Add()
-                    new Marschall(me, sBrand, sa, sb, sc, sd, sBurn); // add to MarschallList
+                    // TODO:  add MarschallList.Add()  
+                    new Marschall(me, sBrand, sa, sb, sc, sd, sBurn); // add to MarschallList  
                     break;
                 case 2:
                     List <Marschall> active =

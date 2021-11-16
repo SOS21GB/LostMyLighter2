@@ -23,7 +23,7 @@ namespace Grupparbete_Marshall.Classes
             get { return burnout ; }
             set { burnout = value; }
         }
-
+        //line to fix merge conflict
         public Marchall(User user,  string _brand, string sName, int sNumber, string sRegion, int pCode, double bTime)
         {
             id = Random.nextint();
