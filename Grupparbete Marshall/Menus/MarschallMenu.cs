@@ -11,28 +11,57 @@ namespace Grupparbete_Marshall.Menus
         List<Marschall> all;
         List<Marschall> active;
 
-        static void Main(string[] args)
+        static void Run(User me)
         {
-
-            Console.WriteLine("Tryck '1' för att se aktiva marschaller");
-            Console.WriteLine("Tryck '2' för att se alla marschaller");
             int select = 0;
-            int.TryParse(Console.ReadLine(), out select) == 1
-            if (select == 1)
+            do {
+                Console.WriteLine("Tryck '1' för att lägga till marschall");
+                Console.WriteLine("Tryck '2' för att se aktiva marschaller");
+                Console.WriteLine("Tryck '3' för att se alla marschaller");               
+            } while (!int.TryParse(Console.ReadLine(), out select));
+            switch (select)
             {
-                foreach (Marschall m in active)
-                {
-                    Console.WriteLine(m.Print());
-                }
-            }
-            else
-            {
-                foreach (Marschall m in all)
-                {
-                    Console.WriteLine(m.Print());
-                }
-            }
+                case 1:
+                    Console.WriteLine("på vilken gata är marschallen?");
+                    String sa = Console.ReadLine();
+                    
+                    int sb = 0;
+                    do {
+                        Console.WriteLine("på vilket husnummer är marschallen?");
+                    } while (int.TryParse(Console.ReadLine(), out sb))
+                    
+                    Console.WriteLine("i vilken kommun är marschallen?");
+                    String sc = Console.ReadLine();
+                   
+                    int sd = 0;
+                    do { 
+                        Console.WriteLine("vilken postnummer har marschallen?");
+                    } (int.TryParse(), out sd);
 
+                        
+                    double sBurn = 60.0 // minutes, default
+                    Console.WriteLine("hur länge tror du att den brinner?");
+                    double.TryParse(Console.ReadLine(), out sBurn); // default:  60 minutes
+
+                    Console.WriteLine("vad är det för märke? (tom sträng om osäker)");
+                    String sBrand = Console.ReadLine();
+                    if (sBrand.Equals("")) { sBrand = "unknown"; }
+
+                    // TODO:  add MarschallList.Add()
+                    new Marschall(me, sBrand, sa, sb, sc, sd, sBurn); // add to MarschallList
+                    break;
+                case 2:
+                    foreach (Marschall m in active)
+                    {
+                        Console.WriteLine(m.Print());
+                    }
+                    break;
+                default:
+                    foreach (Marschall m in all)
+                    {
+                        Console.WriteLine(m.Print());
+                    }
+            }
         }
 
     }
