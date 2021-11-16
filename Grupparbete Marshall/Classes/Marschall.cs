@@ -19,6 +19,11 @@ namespace Grupparbete_Marshall.Classes
         string region;
         int postalCode;
 
+        public DateTime Burnout {
+            get { return burnout ; }
+            set { burnout = value; }
+        }
+
         public Marchall(User user,  string _brand, string sName, int sNumber, string sRegion, int pCode, double bTime)
         {
             id = Random.nextint();
