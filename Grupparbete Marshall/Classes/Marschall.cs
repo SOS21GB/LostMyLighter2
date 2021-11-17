@@ -11,21 +11,33 @@ namespace Grupparbete_Marshall.Classes
     {
         
         int id;
-        String brand;
+        string brand;
         double burntime;
         DateTime reg_stamp;
         User reg_user;
         DateTime burnout;
-        String streetName;
+        string streetName;
         int streetNumber;
-        String region;
+        string region;
         int postalCode;
+
 
         public Marschall(User user, String _brand, String sName, int sNumber, String sRegion, int pCode, double bTime)
         {
             Random random = new Random();
             id = random.Next(0);
             brand = "unkown";
+
+        public DateTime Burnout {
+            get { return burnout ; }
+            set { burnout = value; }
+        }
+        //line to fix merge conflict
+        public Marchall(User user,  string _brand, string sName, int sNumber, string sRegion, int pCode, double bTime)
+        {
+            id = Random.nextint();
+            brand = _brand;
+
             reg_stamp = DateTime.Now;
             reg_user = user;
             burntime = bTime;
@@ -39,13 +51,11 @@ namespace Grupparbete_Marshall.Classes
             MarshallList.all.Add(this);
             
         }
-        
         public string Print() 
         {
             string output = "";
             output += id + "\n";
             return output;
         }
-
     }
 }

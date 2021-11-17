@@ -42,6 +42,7 @@ use the up and down arrowkeys and enter!";
         }
         private void LogIn() 
         {
+
             //Metod som tar en till en meny för Lösen och Användarnamn
 
         }
@@ -51,6 +52,12 @@ use the up and down arrowkeys and enter!";
             
 
 
+
+            WriteLine("Lägg in metod här"); 
+        }
+        private void RegisterUser() 
+        {
+            WriteLine("Lägg in metod här");
         }
         private void ExitMarshall() 
         {

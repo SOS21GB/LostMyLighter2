@@ -61,16 +61,6 @@ namespace Grupparbete_Marshall.Methods
                 Console.WriteLine("Det var inte en korrekt input, försök igen..");
             }
 
-            //Console.Write("Antal sökningar: ");
-            user.NumberOfSearch = 0;
-
-            // Antal registerade Marshaller - osäker på hur jag ska få in detta här
-            //Console.Write("Antal registerade Marshaller: ");
-            user.NumberOfSearch = 0;
-
-            // Antal borttappade tändare - osäker på hur jag ska få in detta här men ska göra ev en count
-            //Console.Write("Antal borttappade tändare: ");
-            user.LostLighters = 0;
 
             
             UserList.UserId = user.Id;
