@@ -9,20 +9,25 @@ namespace Grupparbete_Marshall.Classes
     class Marschall
     {
         int id;
-        String brand;
+        string brand;
         double burntime;
         DateTime reg_stamp;
         User reg_user;
         DateTime burnout;
-        String streetName;
+        string streetName;
         int streetNumber;
-        String region;
+        string region;
         int postalCode;
 
-        public Marchall(User user, String sName, int sNumber, String sRegion, int pCode, double bTime)
+        public DateTime Burnout {
+            get { return burnout ; }
+            set { burnout = value; }
+        }
+        //line to fix merge conflict
+        public Marchall(User user,  string _brand, string sName, int sNumber, string sRegion, int pCode, double bTime)
         {
             id = Random.nextint();
-            brand = "unkown";
+            brand = _brand;
             reg_stamp = DateTime.Now;
             reg_user = user;
             burntime = bTime;
@@ -34,11 +39,5 @@ namespace Grupparbete_Marshall.Classes
             postalCode pCode;
         }
         
-        public Marchall(User user, String _brand String sName, int sNumber, String sRegion, int pCode, double bTime)
-        {
-            Marchall(User user, String sName, int sNumber, String sRegion, int pCode, double bTime)
-            brand = _brand;
-        }
-
     }
 }
