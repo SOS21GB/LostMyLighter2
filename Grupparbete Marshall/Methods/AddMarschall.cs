@@ -19,6 +19,21 @@ namespace Grupparbete_Marshall.Methods
        {
             //Classes.Marschall marschall = new Classes.Marschall();
 
-       }
+            //marshall id saknas
+
+            Console.Write("Ange Marshallens märke: ");
+
+            Console.Write("Ange Marshallens Brinntid: ");
+
+            Console.Write("Ange gatuadressen för Marshallen: ");
+
+            Console.Write("Ange gatunummret för Marshallen: ");
+
+            //tid för reg, datetime
+
+            //anv reggade
+
+            Console.Write("Marshallen förväntas slockna ");
+        }
     }
 }
