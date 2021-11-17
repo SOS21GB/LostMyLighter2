@@ -31,6 +31,11 @@ namespace Grupparbete_Marshall.Classes
         private int _foundMarschall = 0;
         private int _lostLighters = 0;
 
+        public int ID {
+            get { return  _id; }
+            set { _id = value; }
+        }
+      
         public User()
         {          
         }

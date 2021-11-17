@@ -21,16 +21,21 @@ namespace Grupparbete_Marshall.Classes
         string region;
         int postalCode;
 
-
-
-        public DateTime Burnout
-        {
-            get { return burnout; }
+        public DateTime Burnout {
+            get { return  burnout; }
             set { burnout = value; }
         }
+        
+        public int PostalCode {
+            get { return  postalCode; }
+            set { postalCode = value; }
+        }
 
-        //line to fix merge conflict
-        public Marschall(User user, string _brand, string sName, int sNumber, string sRegion, int pCode, double bTime)
+        public User RegUser {
+            get { return  reg_user; }
+            set { reg_user = value; }
+        }
+        public Marchall(User user,  string _brand, string sName, int sNumber, string sRegion, int pCode, double bTime)
         {
             id = marschallList.Count + 1;
             brand = _brand;
@@ -49,4 +54,4 @@ namespace Grupparbete_Marshall.Classes
         }
 
     }
-}
+}	
