@@ -57,7 +57,7 @@ namespace Grupparbete_Marshall.Menus
                             Console.WriteLine("Lägg till ny marshall ");
                             break;
                         case 4:
-                            Console.WriteLine("Lägg till befintlig marshall");                        return;
+                            Console.WriteLine("Lägg till befintlig marshall"); 
                             break;
                         case 5:
                             Console.WriteLine("Ändra användarinställning");

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Grupparbete_Marshall.Classes;
-using Grupparbete_Marshall.Lists;
+
 
 
 namespace Grupparbete_Marshall.Menus
@@ -13,7 +13,7 @@ namespace Grupparbete_Marshall.Menus
     {
         
 
-        public static void MarshallMenu()
+        //public static void MarshallMenu()
 
         /* List<Classes.Marschall> all;
         List<Marschall> active;
