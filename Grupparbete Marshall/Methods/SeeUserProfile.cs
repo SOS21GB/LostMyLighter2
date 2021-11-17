@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Grupparbete_Marshall.Lists;
 
 
+
 namespace Grupparbete_Marshall.Methods
 {
     class SeeUserProfile
@@ -19,9 +20,14 @@ namespace Grupparbete_Marshall.Methods
         public static void PrintUser(int id)
         {
             User user = GetUser(id);
-            Console.WriteLine(user.Id);
-            Console.WriteLine(user.Name);
-            Console.WriteLine(user.Age);
+            Console.WriteLine("ID:{0}", user.Id);
+            Console.WriteLine("Name:{0}", user.Name);
+            Console.WriteLine("Age:{0}", user.Age);
+            Console.WriteLine("Street Adress:{0}", user.StreetAddress);
+            Console.WriteLine("Post Number:{0}", user.PostNumber);
+            Console.WriteLine("Number Of Seach:{0}", user.NumberOfSearch);
+            Console.WriteLine("Found Marchall:{0}", user.FoundMarschall);
+            Console.WriteLine("Lost Lighters:{0}", user.LostLighters); 
                 
              
         }
