@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
+using Grupparbete_Marshall.Lists;
+
 
 namespace Grupparbete_Marshall.Classes
 {
     class User
     {
+        //public static User CurrentUser;
         public int Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
@@ -19,12 +23,13 @@ namespace Grupparbete_Marshall.Classes
 
         public User()
         {
-
+            Id = UserList.userList.Count + 1;//Tilldelar id utefter vilken plats på listan användaren hamnar i.
+            Lists.UserList.userList.Add(this);
         }
 
-        public User(int i, string n, int a, string s, int p, int ns, int f, int l)
+        public User(string n, int a, string s, int p, int ns, int f, int l)
         {
-            this.Id = i;
+            this.Id = UserList.userList.Count + 1;
             this.Name = n;
             this.Age = a;
             this.StreetAddress = s;
@@ -32,7 +37,19 @@ namespace Grupparbete_Marshall.Classes
             this.NumberOfSearch = ns;
             this.FoundMarschall = f;
             this.LostLighters = l;
+            Lists.UserList.userList.Add(this);
         }
+        public void DisplayUserInfo() 
+        {
+            WriteLine($"ID: {Id}");
+            WriteLine($"Name: {Name}");
+            WriteLine($"Age: {Age}");
+            WriteLine($"StreetAddress: {StreetAddress}");
+            WriteLine($"PostNumber: {PostNumber}");
+            WriteLine($"NumberOfSearch: {NumberOfSearch}");
+            WriteLine($"FoundMarschall: {FoundMarschall}");
+            WriteLine($"LostLighters: {LostLighters}");
 
-    }
+        }
+    }   
 }

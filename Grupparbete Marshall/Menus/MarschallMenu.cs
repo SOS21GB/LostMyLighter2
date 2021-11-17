@@ -3,35 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Grupparbete_Marshall.Classes;
+using Grupparbete_Marshall.Lists;
 
 namespace Grupparbete_Marshall.Menus
 {
     class MarschallMenu
     {
-        List<Marschall> all;
-        List<Marschall> active;
+        
 
-        static void Main(string[] args)
+        public static void MarshallMenu()
         {
 
             Console.WriteLine("Tryck '1' för att se aktiva marschaller");
             Console.WriteLine("Tryck '2' för att se alla marschaller");
-            int select = 0;
-            int.TryParse(Console.ReadLine(), out select) == 1
-            if (select == 1)
+            
+            if (int.TryParse(Console.ReadLine(), out int select)) 
             {
-                foreach (Marschall m in active)
+                if (select == 1)
                 {
-                    Console.WriteLine(m.Print());
+                    foreach (Marschall m in MarshallList.active)
+                    {
+                        Console.WriteLine(m.Print());
+                    }
                 }
-            }
-            else
-            {
-                foreach (Marschall m in all)
+                else
                 {
-                    Console.WriteLine(m.Print());
+                    foreach (Marschall m in MarshallList.all)
+                    {
+                        Console.WriteLine(m.Print());
+                    }
                 }
-            }
+            } 
+            
 
         }
 

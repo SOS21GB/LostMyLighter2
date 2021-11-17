@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Grupparbete_Marshall.Classes;
+using Grupparbete_Marshall.Lists;
 
 namespace Grupparbete_Marshall.Methods
 {
@@ -17,7 +19,7 @@ namespace Grupparbete_Marshall.Methods
         {
             Classes.User user = new Classes.User(); //instancierat, först hänvisa t mappen classes sen till klassen man vill använda
 
-            //user id saknas
+            
 
             Console.Write("Ange ditt namn: ");
             user.Name = Console.ReadLine();
@@ -70,7 +72,8 @@ namespace Grupparbete_Marshall.Methods
             //Console.Write("Antal borttappade tändare: ");
             user.LostLighters = 0;
 
-            Lists.UserList.userList.Add(user);
+            
+            UserList.UserId = user.Id;
         }
 
 

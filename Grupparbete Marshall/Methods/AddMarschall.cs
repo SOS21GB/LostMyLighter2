@@ -8,5 +8,6 @@ namespace Grupparbete_Marshall.Methods
 {
     class AddMarschall
     {
+
     }
 }

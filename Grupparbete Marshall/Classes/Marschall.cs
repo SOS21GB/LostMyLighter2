@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Grupparbete_Marshall.Lists;
 
 namespace Grupparbete_Marshall.Classes
 {
     class Marschall
     {
+        
         int id;
         String brand;
         double burntime;
@@ -19,9 +21,10 @@ namespace Grupparbete_Marshall.Classes
         String region;
         int postalCode;
 
-        public Marchall(User user, String sName, int sNumber, String sRegion, int pCode, double bTime)
+        public Marschall(User user, String _brand, String sName, int sNumber, String sRegion, int pCode, double bTime)
         {
-            id = Random.nextint();
+            Random random = new Random();
+            id = random.Next(0);
             brand = "unkown";
             reg_stamp = DateTime.Now;
             reg_user = user;
@@ -31,13 +34,17 @@ namespace Grupparbete_Marshall.Classes
             streetName = sName;
             streetNumber = sNumber;
             region = sRegion;
-            postalCode pCode;
+            postalCode = pCode;
+            brand = _brand;
+            MarshallList.all.Add(this);
+            
         }
         
-        public Marchall(User user, String _brand String sName, int sNumber, String sRegion, int pCode, double bTime)
+        public string Print() 
         {
-            Marchall(User user, String sName, int sNumber, String sRegion, int pCode, double bTime)
-            brand = _brand;
+            string output = "";
+            output += id + "\n";
+            return output;
         }
 
     }
