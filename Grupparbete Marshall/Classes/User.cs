@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
-using Grupparbete_Marshall.Lists;
-
 
 namespace Grupparbete_Marshall.Classes
 {
     class User
     {
 
-        //public static User CurrentUser;
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public string StreetAddress { get; set; }
-        public int PostNumber { get; set; }
-        public int NumberOfSearch { get; set; }
-        public int FoundMarschall { get; set; }
-        public int LostLighters { get; set; }
+        public static List<User> userList = new List<User>();
+
+        public static void InitializeUserList()
+        {
+            new Classes.User("Anders Andersson", 30, "Exempeladress 1", 40010, 0, 0, 0);
+            new Classes.User("Anders Johansson", 30, "Exempeladress 2", 40010, 0, 0, 0);
+            new Classes.User("Anders Göransson", 30, "Exempeladress 3", 40010, 0, 0, 0);
+            new Classes.User("Anders Nilsson", 30, "Exempeladress 4", 40010, 0, 0, 0);
+            new Classes.User("Anders Olsson", 30, "Exempeladress 5", 40010, 0, 0, 0);
+        }
+
 
         private int _id;
         private string _name;
@@ -31,31 +31,27 @@ namespace Grupparbete_Marshall.Classes
         private int _foundMarschall = 0;
         private int _lostLighters = 0;
 
-        private static List<User> userList = new List<User>();
-
-
         public User()
-        {
-            Id = UserList.userList.Count + 1;//Tilldelar id utefter vilken plats på listan användaren hamnar i.
-            Lists.UserList.userList.Add(this);
+        {          
         }
 
 
         public User(string n, int a, string s, int p, int ns, int f, int l)
         {
-            this.Id = UserList.userList.Count + 1;
-            this.Name = n;
-            this.Age = a;
-            this.StreetAddress = s;
-            this.PostNumber = p;
-            this.NumberOfSearch = ns;
-            this.FoundMarschall = f;
-            this.LostLighters = l;
-            Lists.UserList.userList.Add(this);
+            this._id = userList.Count + 1;
+            this._name = n;
+            this._age = a;
+            this._streetAddress = s;
+            this._postNumber = p;
+            this._numberOfSearch = ns;
+            this._foundMarschall = f;
+            this._lostLighters = l;
+            userList.Add(this);
+        }
 
-        public User(int i, string n, int a, string s, int p)
+        public User(string n, int a, string s, int p)
         {
-            this._id = i;
+            this._id = userList.Count + 1;
             this._name = n;
             this._age = a;
             this._streetAddress = s;
@@ -63,27 +59,18 @@ namespace Grupparbete_Marshall.Classes
             userList.Add(this);
         }
 
-
-        public static void InitializeUserList()
+        public void PrintUser()
         {
-            new User(1, "Anders Andersson", 30, "Exempeladress 1", 40010);
-            new User(2, "Anders Johansson", 30, "Exempeladress 2", 40010);
-            new User(3, "Anders Göransson", 30, "Exempeladress 3", 40010);
-            new User(4, "Anders Nilsson", 30, "Exempeladress 4", 40010);
-            new User(5, "Anders Olsson", 30, "Exempeladress 5", 40010);
+            
+            Console.WriteLine("ID:{0}", _id);
+            Console.WriteLine("Name:{0}", _name);
+            Console.WriteLine("Age:{0}", _age);
+            Console.WriteLine("Street Adress:{0}", _streetAddress);
+            Console.WriteLine("Post Number:{0}", _postNumber);
+            Console.WriteLine("Number Of Seach:{0}", _numberOfSearch);
+            Console.WriteLine("Found Marchall:{0}", _foundMarschall);
+            Console.WriteLine("Lost Lighters:{0}", _lostLighters);
 
         }
-        public void DisplayUserInfo() 
-        {
-            WriteLine($"ID: {Id}");
-            WriteLine($"Name: {Name}");
-            WriteLine($"Age: {Age}");
-            WriteLine($"StreetAddress: {StreetAddress}");
-            WriteLine($"PostNumber: {PostNumber}");
-            WriteLine($"NumberOfSearch: {NumberOfSearch}");
-            WriteLine($"FoundMarschall: {FoundMarschall}");
-            WriteLine($"LostLighters: {LostLighters}");
-
-        }
-    }   
+    }
 }
