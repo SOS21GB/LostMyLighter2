@@ -8,6 +8,8 @@ namespace Grupparbete_Marshall.Classes
 {
     class Marschall
     {
+        public static List<Marschall> marschallList = new List<Marschall>();
+
         int id;
         string brand;
         double burntime;
@@ -20,14 +22,24 @@ namespace Grupparbete_Marshall.Classes
         int postalCode;
 
         public DateTime Burnout {
-            get { return burnout ; }
+            get { return  burnout; }
             set { burnout = value; }
         }
+        
+        public int PostalCode {
+            get { return  postalCode; }
+            set { postalCode = value; }
+        }
 
+        public User RegUser {
+            get { return  reg_user; }
+            set { reg_user = value; }
+        }
         public Marchall(User user,  string _brand, string sName, int sNumber, string sRegion, int pCode, double bTime)
         {
-            id = Random.nextint();
+            id = marschallList.Count + 1;
             brand = _brand;
+
             reg_stamp = DateTime.Now;
             reg_user = user;
             burntime = bTime;
@@ -36,8 +48,10 @@ namespace Grupparbete_Marshall.Classes
             streetName = sName;
             streetNumber = sNumber;
             region = sRegion;
-            postalCode pCode;
+            postalCode = pCode;
+            brand = _brand;
+            marschallList.Add(this);
         }
-        
+
     }
-}
+}	
