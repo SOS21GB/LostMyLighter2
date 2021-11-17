@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Grupparbete_Marshall.Classes;
+using Grupparbete_Marshall.Lists;
+
 
 namespace Grupparbete_Marshall.Menus
 {
     class MarschallMenu
     {
+        
+
+        public static void MarshallMenu()
 
         /* List<Classes.Marschall> all;
         List<Marschall> active;
@@ -17,6 +22,7 @@ namespace Grupparbete_Marshall.Menus
 
         
         static void Run(User me, List<Marschall> all)
+
 
         {
             int select = 0;
@@ -28,16 +34,35 @@ namespace Grupparbete_Marshall.Menus
             switch (select)
 
 
+            Console.WriteLine("Tryck '1' f�r att se aktiva marschaller");
+            Console.WriteLine("Tryck '2' f�r att se alla marschaller");
+            
+            if (int.TryParse(Console.ReadLine(), out int select)) 
+
             Console.WriteLine("Tryck '1' f?r att se aktiva marschaller");
             Console.WriteLine("Tryck '2' f?r att se alla marschaller");
             int select = 0;
             int.TryParse(Console.ReadLine(), out select) == 1;
             if (select == 1)
             {
-                foreach (Marschall m in active)
+                if (select == 1)
                 {
-                    Console.WriteLine(m.Print());
+                    foreach (Marschall m in MarshallList.active)
+                    {
+                        Console.WriteLine(m.Print());
+                    }
                 }
+
+                else
+                {
+                    foreach (Marschall m in MarshallList.all)
+                    {
+                        Console.WriteLine(m.Print());
+                    }
+                }
+            } 
+            
+
             }
             else
             {
@@ -62,6 +87,7 @@ namespace Grupparbete_Marshall.Menus
                     double sBurn = 60.0 // minutes, default
                     Console.WriteLine("hur l?nge tror du att den brinner?");
                     double.TryParse(Console.ReadLine(), out sBurn); // default:  60 minutes
+
 
                     Console.WriteLine("vad ?r det f?r m?rke? (tom str?ng om os?ker)");
                     String sBrand = Console.ReadLine();

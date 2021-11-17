@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
+using Grupparbete_Marshall.Classes;
+using Grupparbete_Marshall.Lists;
+using Grupparbete_Marshall.Methods;
 
 namespace Grupparbete_Marshall.Menus
 {
@@ -39,6 +42,17 @@ use the up and down arrowkeys and enter!";
         }
         private void LogIn() 
         {
+
+            //Metod som tar en till en meny för Lösen och Användarnamn
+
+        }
+        private void RegisterUser() 
+        {
+            AddUser.AddUsers();
+            
+
+
+
             WriteLine("Lägg in metod här"); 
         }
         private void RegisterUser() 

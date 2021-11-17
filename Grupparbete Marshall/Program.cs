@@ -1,3 +1,5 @@
+
+using System;
 using Grupparbete_Marshall.Classes;
 using System;
 using System;
@@ -11,6 +13,10 @@ namespace Grupparbete_Marshall
        
         {
             Lists.UserList.InitializeUserList();
+            Menus.Startmenu start = new Menus.Startmenu();
+            start.Start();
+          
+                        
 
             Menus.Startmenu start = new Menus.Startmenu();
             start.Start();
