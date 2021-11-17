@@ -9,7 +9,6 @@ namespace Grupparbete_Marshall.Menus
 {
     class MarschallMenu
     {
-
         static void Run(User me, List<Marschall> all)
         {
             int select = 0;
@@ -19,8 +18,9 @@ namespace Grupparbete_Marshall.Menus
                 Console.WriteLine("Tryck '2' f?r att se aktiva marschaller");
                 Console.WriteLine("Tryck '3' f?r att se filtrera efter postkod");
                 Console.WriteLine("Tryck '4' f?r att se din marschaller");
-                Console.WriteLine("Tryck '5' f?r att se filtrera efter användare");
+                Console.WriteLine("Tryck '5' f?r att se filtrera efter anvï¿½ndare");
                 Console.WriteLine("Tryck '6' f?r att se alla marschaller");
+
             } while (!int.TryParse(Console.ReadLine(), out select));
             switch (select)
             {
@@ -33,7 +33,6 @@ namespace Grupparbete_Marshall.Menus
                     {
                         Console.WriteLine("p? vilket husnummer ?r marschallen?");
                     } while (int.TryParse(Console.ReadLine(), out sb))
-
 
                     Console.WriteLine("i vilken kommun ?r marschallen?");
                     String sc = Console.ReadLine();
@@ -65,7 +64,7 @@ namespace Grupparbete_Marshall.Menus
                     int filterPostalCode = 0;
                     do
                     {
-                        Console.WriteLine("välj postnummer");
+                        Console.WriteLine("vï¿½lj postnummer");
                     } while (int.TryParse(Console.ReadLine(), out filterPostalCode));
 
                     foreach (Marschall m in all.Where(x => x.PostalCode == filterPostalCode))

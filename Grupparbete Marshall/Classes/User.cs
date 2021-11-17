@@ -35,7 +35,7 @@ namespace Grupparbete_Marshall.Classes
             get { return  _id; }
             set { _id = value; }
         }
-
+      
         public User()
         {          
         }
