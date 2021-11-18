@@ -41,10 +41,7 @@ use the up and down arrowkeys and enter!";
         }
        
       
-        private void RegisterUser() 
-        {
-            WriteLine("Lägg in metod här");
-        }
+       
         private void ExitMarshall() 
         {
             WriteLine("\n Press any key to exit the app");
