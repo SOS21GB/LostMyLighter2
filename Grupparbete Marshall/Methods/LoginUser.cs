@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Grupparbete_Marshall.Classes;
+using Grupparbete_Marshall.Menus;
 
 namespace Grupparbete_Marshall.Methods
 {
@@ -19,7 +20,7 @@ namespace Grupparbete_Marshall.Methods
 
             currentUser = User.GetUserById(id);
 
-            //Menus.LoginMenu.StartLoginMenu(); Mintamir
+            MenuAtLogin.LoginMenu(); 
 
         }
 

@@ -11,6 +11,7 @@ namespace Grupparbete_Marshall
        
         {
             User.InitializeUserList();
+            Marschall.InitializeMarschallList();
             Menus.Startmenu start = new Menus.Startmenu();
             start.Start(); 
         }

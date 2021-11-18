@@ -29,7 +29,7 @@ use the up and down arrowkeys and enter!";
             switch (SelectedIndex) 
             {
                 case 0:
-                    LogIn();
+                    LoginUser.UserLogin();
                     break;
                 case 1:
                     AddUser.AddUsers();
@@ -39,12 +39,7 @@ use the up and down arrowkeys and enter!";
                     break;
             }
         }
-        private void LogIn() 
-        {
-
-            //Metod som tar en till en meny för Lösen och Användarnamn
-
-        }
+       
       
         private void RegisterUser() 
         {
