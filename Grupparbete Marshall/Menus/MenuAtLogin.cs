@@ -8,9 +8,9 @@ namespace Grupparbete_Marshall.Menus
 {
     class MenuAtLogin
     {
-        static void Main(string[] args)
+        public void LogInMenu()
         {
-            
+         
             bool isInvalidInput = false;
            
 
