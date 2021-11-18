@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Console;
+using Grupparbete_Marshall.Methods;
 
 namespace Grupparbete_Marshall.Classes
 {
@@ -76,6 +77,34 @@ namespace Grupparbete_Marshall.Classes
             Console.WriteLine("Found Marchall:{0}", _foundMarschall);
             Console.WriteLine("Lost Lighters:{0}", _lostLighters);
 
+        }
+        public static string GetUserName(User user)
+        {
+            return user._name;
+        }
+        public static User GetUserById(int id)
+        {
+            foreach (User u in userList)
+            {
+                if (u._id == id)
+                {
+                    return u;
+                }
+            }
+
+            Console.WriteLine("That was not a valid ID, try again..");
+            return null;
+        }
+        public static void AddSearch(User user)
+        {
+            user = GetUserById(LoginUser.currentUser._id);
+            user._numberOfSearch++;
+        }
+
+        public static void AddFoundMarshall(User user)
+        {
+            user = GetUserById(LoginUser.currentUser._id);
+            user._foundMarschall++;
         }
     }
 }

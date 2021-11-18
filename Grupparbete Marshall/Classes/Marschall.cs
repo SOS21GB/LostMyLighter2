@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Grupparbete_Marshall.Methods;
 
 namespace Grupparbete_Marshall.Classes
 {
@@ -35,7 +36,7 @@ namespace Grupparbete_Marshall.Classes
             get { return  reg_user; }
             set { reg_user = value; }
         }
-        public Marchall(User user,  string _brand, string sName, int sNumber, string sRegion, int pCode, double bTime)
+        public Marschall(User user,  string _brand, string sName, int sNumber, string sRegion, int pCode, double bTime)
         {
             id = marschallList.Count + 1;
             brand = _brand;
@@ -52,6 +53,25 @@ namespace Grupparbete_Marshall.Classes
             brand = _brand;
             marschallList.Add(this);
         }
+        //Printa aktiva marschaller.
+        public static void PrintActiveMarschall() 
+        {
+            var activeMarshall = marschallList.Where(marshall => marshall.burnout > DateTime.Now);
+            foreach (Marschall m in activeMarshall)
+            {
+                Console.WriteLine("ID {0}", m.id);
+                Console.WriteLine("Registered at: {0}", m.reg_stamp);
+                Console.WriteLine("Burnes out at: {0}", m.burnout);
+                Console.WriteLine("Registered by: {0}", Classes.User.GetUserName(m.reg_user));
 
+                Console.WriteLine();
+                User.AddSearch(LoginUser.currentUser);
+                Console.WriteLine("Press any button to return to the menu and clear the console.");
+                Console.ReadKey();
+                Console.Clear();
+                //LoginMenu.StartLoginMenu(); Mintamir
+            }
+
+        }
     }
 }	
