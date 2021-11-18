@@ -58,6 +58,9 @@ namespace Grupparbete_Marshall.Methods
             }
 
             User user = new User(name, age, streetAddress, postNumber);
+            LoginUser.currentUser = user;
+            Menus.MenuAtLogin.LoginMenu();
+            Console.ReadLine();
 
         }
 

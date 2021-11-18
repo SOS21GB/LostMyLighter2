@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Grupparbete_Marshall.Classes;
 
 namespace Grupparbete_Marshall.Menus
 {
     class MenuAtLogin
     {
-        public void LogInMenu()
+
+        public static void LoginMenu()
+
+
         {
          
             bool isInvalidInput = false;
@@ -21,11 +25,11 @@ namespace Grupparbete_Marshall.Menus
                 try
                 {
                     
-                    Console.WriteLine("Ange ditt ID: ");
-                    int ID = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Nuvarande Användare: ");  //user list??
-                    string name = Console.ReadLine();
-                    Console.WriteLine();//separation
+                    //Console.WriteLine("Ange ditt ID: ");
+                    //int ID = int.Parse(Console.ReadLine());
+                    //Console.WriteLine("Nuvarande Användare: ");  //user list??
+                    //string name = Console.ReadLine();
+                    //Console.WriteLine();//separation
 
                     Console.WriteLine("1. Hitta aktiva marshalls i närheten");
                     Console.WriteLine("2. Lista alla aktiva marshalls ");
@@ -52,6 +56,8 @@ namespace Grupparbete_Marshall.Menus
                             break;
                         case 2:
                             Console.WriteLine("Lista alla aktiva marshalls ");
+                            Marschall.PrintActiveMarschall();
+
                             break;
                         case 3:
                             Console.WriteLine("Lägg till ny marshall ");
