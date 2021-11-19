@@ -65,17 +65,17 @@ namespace Grupparbete_Marshall.Classes
             userList.Add(this);
         }
 
-        public void PrintUser()
+        public static void PrintUser(User user)
         {
             
-            Console.WriteLine("ID:{0}", _id);
-            Console.WriteLine("Name:{0}", _name);
-            Console.WriteLine("Age:{0}", _age);
-            Console.WriteLine("Street Adress:{0}", _streetAddress);
-            Console.WriteLine("Post Number:{0}", _postNumber);
-            Console.WriteLine("Number Of Seach:{0}", _numberOfSearch);
-            Console.WriteLine("Found Marchall:{0}", _foundMarschall);
-            Console.WriteLine("Lost Lighters:{0}", _lostLighters);
+            Console.WriteLine("ID:{0}", user._id);
+            Console.WriteLine("Name:{0}", user._name);
+            Console.WriteLine("Age:{0}", user._age);
+            Console.WriteLine("Street Adress:{0}", user._streetAddress);
+            Console.WriteLine("Post Number:{0}", user._postNumber);
+            Console.WriteLine("Number Of Seach:{0}", user._numberOfSearch);
+            Console.WriteLine("Found Marchall:{0}", user._foundMarschall);
+            Console.WriteLine("Lost Lighters:{0}", user._lostLighters);
 
         }
         public static string GetUserName(User user)
@@ -117,8 +117,50 @@ namespace Grupparbete_Marshall.Classes
             Console.WriteLine("\n Press any key to return to Main menu");
             Console.ReadKey();
             Menus.MenuAtLogin.LoginMenu();
+        }
 
+        public static void EditUserMethod(User user)
+        {
+            int userInput = 0;
 
+            do
+            {
+                Console.WriteLine("Välj vad vill du ändra: ");
+                Console.WriteLine("1. Ändra namn");
+                Console.WriteLine("2. Ändra ålder");
+                Console.WriteLine("3. Ändra adress");
+
+                try
+                {
+                    userInput = Convert.ToInt32(Console.ReadLine()); //anv input
+                }
+                catch //om de inte skriver in 1-3 elr ngt 
+                {
+                    Console.Clear();
+                    Console.WriteLine("Du måste välja ett nummer ifrån menyn. Tryck på valfri tangent för att försöka igen: ");
+                }
+
+            } while (userInput == 0);//kör sålånge input är 0 / mindre än 3
+
+            switch (userInput)
+            {
+                case 1:
+                    Console.WriteLine("Ändra namn: ");
+                    LoginUser.currentUser._name = Console.ReadLine();
+                    break;
+
+                case 2:
+                    Console.WriteLine("Ändra ålder: ");
+                    LoginUser.currentUser._age = Convert.ToInt32(Console.ReadLine());
+                    break;
+
+                case 3:
+                    Console.WriteLine("Ändra address: ");
+                    LoginUser.currentUser._streetAddress = Console.ReadLine();
+                    break;
+            }
+
+            Menus.MenuAtLogin.LoginMenu();
         }
     }
 
