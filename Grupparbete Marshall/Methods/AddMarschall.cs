@@ -69,15 +69,20 @@ namespace Grupparbete_Marshall.Methods
 
             
 
-            Console.Write("Marshallen registerades klockan {0}", DateTime.Now); //tid för reg, datetime, osäker om de är rätt
+            Console.WriteLine("Marshallen registerades klockan {0}", DateTime.Now); //tid för reg, datetime, osäker om de är rätt
             //Console.Write(DateTime.Now);
             
-            Console.Write("Marshallen förväntas slockna klockan "); //datetime slockna
+            Console.WriteLine("Marshallen förväntas slockna klockan {0} ", DateTime.Now.AddMinutes(burnTime)); //datetime slockna
 
-            Console.Write("Användaren som registrerade marshallen"); //anv reggade
+            
 
-            //Marschall marschall = new Marschall(user, brand, streetName, streetNumber, region, postalCode, burnTime);
+            Marschall marschall = new Marschall(brand, burnTime, LoginUser.currentUser.ID, streetName, streetNumber, postalCode );
+            User.AddFoundMarshall(LoginUser.currentUser);
 
+            Console.WriteLine("Press any key to clear console and return to main menu...");            
+            Console.ReadKey();
+            Console.Clear();
+            Menus.MenuAtLogin.LoginMenu();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Grupparbete_Marshall.Classes;
+using Grupparbete_Marshall.Methods;
 
 namespace Grupparbete_Marshall.Menus
 {
@@ -60,7 +61,7 @@ namespace Grupparbete_Marshall.Menus
 
                             break;
                         case 3:
-                            Console.WriteLine("Lägg till ny marshall ");
+                            Methods.AddMarschall.AddMarshalls();
                             break;
                         case 4:
                             Console.WriteLine("Lägg till befintlig marshall"); 
@@ -72,13 +73,13 @@ namespace Grupparbete_Marshall.Menus
                             Console.WriteLine("Filtrera aktiv marshall");
                             break;
                         case 7:
-                            User.EditUserMethod(Methods.LoginUser.currentUser);
+                            User.EditUserMethod(LoginUser.currentUser);
                             break;
                         case 8:
-                            User.AddLostLighter(Methods.LoginUser.currentUser);
+                            User.AddLostLighter(LoginUser.currentUser);
                             break;
                         case 9:
-                            User.PrintUser(Methods.LoginUser.currentUser);
+                            User.PrintUser(LoginUser.currentUser);
                             break;
                         case 0:
                             Console.WriteLine("Avsluta programet!");
