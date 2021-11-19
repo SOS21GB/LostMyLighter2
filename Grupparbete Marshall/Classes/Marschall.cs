@@ -69,7 +69,7 @@ namespace Grupparbete_Marshall.Classes
             new Marschall(4, 2, 1, date1, 41517);
             new Marschall(5, 3, 1, date1, 43636);
         }
-        //Printa aktiva marschaller.
+        
         public static void PrintActiveMarschall() 
         {
             var activeMarshall = marschallList.Where(marshall => marshall.burnout > DateTime.Now);

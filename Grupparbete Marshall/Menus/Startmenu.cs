@@ -9,9 +9,9 @@ using Grupparbete_Marshall.Methods;
 
 namespace Grupparbete_Marshall.Menus
 {
-    class Startmenu 
-    { 
-        private void RunStartMenu() 
+    class Startmenu
+    {
+        private void RunStartMenu()
         {
             string prompt = @"
 
@@ -26,7 +26,7 @@ use the up and down arrowkeys and enter!";
             string[] options = { "Log in", "Create new user", "Exit" };
             Menu startMenu = new Menu(prompt, options);
             int SelectedIndex = startMenu.run();
-            switch (SelectedIndex) 
+            switch (SelectedIndex)
             {
                 case 0:
                     LoginUser.UserLogin();
@@ -39,10 +39,10 @@ use the up and down arrowkeys and enter!";
                     break;
             }
         }
-       
-      
-       
-        private void ExitMarshall() 
+
+
+
+        private void ExitMarshall()
         {
             WriteLine("\n Press any key to exit the app");
             ReadKey(true);
@@ -52,10 +52,10 @@ use the up and down arrowkeys and enter!";
 
 
 
-        public void Start() 
+        public void Start()
         {
             RunStartMenu();
-          
+
         }
     }
 }
