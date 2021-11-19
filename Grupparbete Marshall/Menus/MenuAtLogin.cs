@@ -75,7 +75,7 @@ namespace Grupparbete_Marshall.Menus
                             Console.WriteLine("Filtrera aktiv marshall");
                             break;
                         case 8:
-                            Console.WriteLine("Registrera förlorad tändare");
+                            User.AddLostLighter(Methods.LoginUser.currentUser);
                             break;
                         case 9:
                             Console.WriteLine("Visa profil");
