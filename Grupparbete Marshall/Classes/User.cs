@@ -106,5 +106,20 @@ namespace Grupparbete_Marshall.Classes
             user = GetUserById(LoginUser.currentUser._id);
             user._foundMarschall++;
         }
+        public static void AddLostLighter(User user)
+        {
+            user = GetUserById(LoginUser.currentUser._id);
+            user._lostLighters++;
+
+            Console.WriteLine("Lost lighter has been recorded");
+          
+
+            Console.WriteLine("\n Press any key to return to Main menu");
+            Console.ReadKey();
+            Menus.MenuAtLogin.LoginMenu();
+
+
+        }
     }
+
 }
