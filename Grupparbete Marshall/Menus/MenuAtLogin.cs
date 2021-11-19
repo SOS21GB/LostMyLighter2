@@ -39,7 +39,7 @@ namespace Grupparbete_Marshall.Menus
 
                     Console.WriteLine("5. Ändra användarinställning");
                     Console.WriteLine("6. Filtrera aktiv marshall");
-                    Console.WriteLine("7. Lägg til användare");
+                    Console.WriteLine("7. Ändra i användarprofil");
                     Console.WriteLine("8. Registrera förlorad tändare");
                     Console.WriteLine("9. Visa profil");
                     Console.WriteLine();//separation
@@ -72,13 +72,13 @@ namespace Grupparbete_Marshall.Menus
                             Console.WriteLine("Filtrera aktiv marshall");
                             break;
                         case 7:
-                            Console.WriteLine("Filtrera aktiv marshall");
+                            User.EditUserMethod(Methods.LoginUser.currentUser);
                             break;
                         case 8:
                             User.AddLostLighter(Methods.LoginUser.currentUser);
                             break;
                         case 9:
-                            Console.WriteLine("Visa profil");
+                            User.PrintUser(Methods.LoginUser.currentUser);
                             break;
                         case 0:
                             Console.WriteLine("Avsluta programet!");

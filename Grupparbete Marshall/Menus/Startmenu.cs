@@ -35,7 +35,7 @@ use the up and down arrowkeys and enter!";
                     AddUser.AddUsers();
                     break;
                 case 2:
-                    ExitMarshall();
+                    EndProgram.ExitMarshall();
                     break;
             }
         }
