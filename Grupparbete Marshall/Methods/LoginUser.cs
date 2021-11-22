@@ -17,14 +17,9 @@ namespace Grupparbete_Marshall.Methods
             Console.WriteLine("Please enter your user ID: ");
             int id = int.Parse(Console.ReadLine());
 
-
             currentUser = User.GetUserById(id);
 
-            MenuAtLogin.LoginMenu(); 
-
+            MenuAtLogin.LoginMenu();
         }
-
-
-
     }
 }
