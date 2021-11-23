@@ -171,10 +171,10 @@ namespace Grupparbete_Marshall.Classes
 
             int HighscoreLostLitghers = 0;
 
-            foreach (var currentObject in UserList.userList)
+            foreach (var currentObject in User.userList)
 
             {
-                HighscoreLostLitghers += currentObject.LostLighters;
+                HighscoreLostLitghers += currentObject._lostLighters;
                 //Console.WriteLine("Highscores LostLitghers: [0]", currentObject.LostLitghers);
 
             }
@@ -185,3 +185,4 @@ namespace Grupparbete_Marshall.Classes
         }
 
     }
+}
