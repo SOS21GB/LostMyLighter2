@@ -1,5 +1,8 @@
-﻿using Grupparbete_Marshall.Classes;
+
 using System;
+using Grupparbete_Marshall.Classes;
+using static System.Console;
+
 
 namespace Grupparbete_Marshall
 {
@@ -8,24 +11,14 @@ namespace Grupparbete_Marshall
         static void Main(string[] args)
        
         {
-            Lists.UserList.InitializeUserList();
 
-    
-     
-        
+            User.InitializeUserList();
+            Marschall.InitializeMarschallList();
+            Menus.Startmenu start = new Menus.Startmenu();
+            start.Start(); 
         }
-
-        
-
-
 
 
     }
-
-
-
-
-
-
 
 }
