@@ -35,14 +35,14 @@ use the up and down arrowkeys and enter!";
                     AddUser.AddUsers();
                     break;
                 case 2:
-                    EndProgram.ExitMarshall();
+                    EndProgram.ExitMarschall();
                     break;
             }
         }
 
 
 
-        private void ExitMarshall()
+        private void ExitMarschall()
         {
             WriteLine("\n Press any key to exit the app");
             ReadKey(true);

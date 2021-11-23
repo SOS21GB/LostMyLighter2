@@ -163,6 +163,7 @@ namespace Grupparbete_Marshall.Classes
 
             Menus.MenuAtLogin.LoginMenu();
         }
+
         public static void GetHighscores()
 
         {
@@ -229,3 +230,8 @@ namespace Grupparbete_Marshall.Classes
 
     }
 }
+
+    }
+
+}
+
