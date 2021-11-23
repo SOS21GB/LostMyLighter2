@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -214,4 +214,18 @@ namespace Grupparbete_Marshall.Classes
 
 }
 
+            foreach (var currentObject in User.userList)
+
+            {
+                HighscoreLostLitghers += currentObject._lostLighters;
+                //Console.WriteLine("Highscores LostLitghers: [0]", currentObject.LostLitghers);
+
+            }
+            Console.WriteLine("Highscores is: " + HighscoreLostLitghers);
+
+
+
+        }
+
+    }
 }
