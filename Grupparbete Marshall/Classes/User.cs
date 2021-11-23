@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -163,6 +163,75 @@ namespace Grupparbete_Marshall.Classes
 
             Menus.MenuAtLogin.LoginMenu();
         }
+
+        public static void GetHighscores()
+
+        {
+            //User user = GetUser(this.LostLigters);
+            //var Highscores = this.LostLigthers.Orderby(x => x this.l);
+
+            int HighscoreLostLitghers = 0;
+
+            foreach (var currentObject in UserList.userList)
+
+            {
+                HighscoreLostLitghers += currentObject.LostLighters;
+                //Console.WriteLine("Highscores LostLitghers: [0]", currentObject.LostLitghers);
+
+            }
+            Console.WriteLine("Highscores is: " + HighscoreLostLitghers);
+
+
+            //User user = GetUser(this.FoundMarschall);
+            //var Highscores = this.FoundMarschall.Orderby(x => x this.f);
+
+
+            int HighscoresFoundMarschall = 0;
+
+
+            foreach (var currentObject in User.userList)
+            {
+                HighscoresFoundMarschall += currentObject.FoundMarschall;
+
+                //Console.WriteLine("Highscores Found Marschall: [0]", currentObject.FoundMarschall);
+            }
+            Console.WriteLine("Highscores is: " + HighscoresFoundMarschall);
+
+
+
+
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+}
+
+            foreach (var currentObject in User.userList)
+
+            {
+                HighscoreLostLitghers += currentObject._lostLighters;
+                //Console.WriteLine("Highscores LostLitghers: [0]", currentObject.LostLitghers);
+
+            }
+            Console.WriteLine("Highscores is: " + HighscoreLostLitghers);
+
+
+
+        }
+
+    }
+}
+
     }
 
 }
+
