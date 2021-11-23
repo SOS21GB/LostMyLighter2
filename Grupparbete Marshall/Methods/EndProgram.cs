@@ -11,7 +11,7 @@ namespace Grupparbete_Marshall.Methods
 {
     class EndProgram
     {
-        public static void ExitMarshall()
+        public static void ExitMarschall()
         {
 
 
@@ -34,7 +34,24 @@ ______________ ______________    ___________ _______  ________ ._.
 
             WriteLine("\n Press any key to exit the program");
             ReadKey(true);
+            Console.WriteLine("Ge oss feedback? [JA/NEJ] ");
+            string result = Console.ReadLine();
 
+            if (result == "JA")
+            {
+                Console.WriteLine("Tack för att du vill ge oss Feedback!");
+                Console.WriteLine("Skala 1 till 5, hur du tyckte detta var?: ");
+                int tal = Convert.ToInt32(Console.ReadLine());
+
+
+                Console.WriteLine("Tack för för ditt svar");
+            }
+
+
+            else if (result == "NEJ")
+            {
+                Console.WriteLine("Tack för din tid");
+            }
         }
 
 

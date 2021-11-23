@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,8 +27,23 @@ namespace Grupparbete_Marshall.Menus
                 try
                 {
 
+
                     
                     Console.WriteLine(@"Main menu
+
+                    Console.WriteLine("1. Hitta aktiva marschaller i närheten");
+                    Console.WriteLine("2. Lista alla aktiva marschaller ");
+                    Console.WriteLine("3. Lägg till ny marschall ");
+                    Console.WriteLine("4. Lägg till befintlig marschall");
+                    Console.WriteLine();//separation
+
+                    Console.WriteLine("5. Ändra användarinställning");
+                    Console.WriteLine("6. Filtrera aktiv marschall");
+                    Console.WriteLine("7. Ändra i användarprofil");
+                    Console.WriteLine("8. Registrera förlorad tändare");
+                    Console.WriteLine("9. Visa profil");
+                    Console.WriteLine();//separation
+
 
 1. Find active marschalls near by
 2. List all active marschalls
@@ -46,15 +61,22 @@ namespace Grupparbete_Marshall.Menus
                     switch (option)
                     {
                         case 1:
+
                             Console.WriteLine("Find active marschalls near by");
                             break;
                         case 2:
                             Console.WriteLine("List all active marschalls ");
+
+                            Console.WriteLine("Hitta aktiva marschaller i närheten");
+                            break;
+                        case 2:
+                            Console.WriteLine("Lista alla aktiva marschaller ");
+
                             Marschall.PrintActiveMarschall();
 
                             break;
                         case 3:
-                            Methods.AddMarschall.AddMarshalls();
+                            Methods.AddMarschall.AddMarschalls();
                             break;
                         case 4:
                             Console.WriteLine("Add existing marschall"); 

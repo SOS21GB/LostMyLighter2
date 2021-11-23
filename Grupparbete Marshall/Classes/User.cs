@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,6 @@ namespace Grupparbete_Marshall.Classes
 {
     class User
     {
-
         public static List<User> userList = new List<User>();
 
         public static void InitializeUserList()
@@ -22,7 +21,6 @@ namespace Grupparbete_Marshall.Classes
             new Classes.User("Anders Olsson", 30, "Exempeladress 5", 40010, 0, 0, 0);
         }
 
-
         private int _id;
         private string _name;
         private int _age;
@@ -32,15 +30,15 @@ namespace Grupparbete_Marshall.Classes
         private int _foundMarschall = 0;
         private int _lostLighters = 0;
 
-        public int ID {
-            get { return  _id; }
+        public int ID
+        {
+            get { return _id; }
             set { _id = value; }
         }
-      
-        public User()
-        {          
-        }
 
+        public User()
+        {
+        }
 
         public User(string n, int a, string s, int p, int ns, int f, int l)
         {
@@ -67,7 +65,7 @@ namespace Grupparbete_Marshall.Classes
 
         public static void PrintUser(User user)
         {
-            
+
             Console.WriteLine("ID:{0}", user._id);
             Console.WriteLine("Name:{0}", user._name);
             Console.WriteLine("Age:{0}", user._age);
@@ -78,6 +76,7 @@ namespace Grupparbete_Marshall.Classes
             Console.WriteLine("Lost Lighters:{0}", user._lostLighters);
 
         }
+
         public static string GetUserName(User user)
         {
             return user._name;
@@ -95,6 +94,7 @@ namespace Grupparbete_Marshall.Classes
             Console.WriteLine("That was not a valid ID, try again..");
             return null;
         }
+
         public static void AddSearch(User user)
         {
             user = GetUserById(LoginUser.currentUser._id);
@@ -106,13 +106,14 @@ namespace Grupparbete_Marshall.Classes
             user = GetUserById(LoginUser.currentUser._id);
             user._foundMarschall++;
         }
+
         public static void AddLostLighter(User user)
         {
             user = GetUserById(LoginUser.currentUser._id);
             user._lostLighters++;
 
             Console.WriteLine("Lost lighter has been recorded");
-          
+
 
             Console.WriteLine("\n Press any key to return to Main menu");
             Console.ReadKey();
@@ -132,15 +133,15 @@ namespace Grupparbete_Marshall.Classes
 
                 try
                 {
-                    userInput = Convert.ToInt32(Console.ReadLine()); //anv input
+                    userInput = Convert.ToInt32(Console.ReadLine());
                 }
-                catch //om de inte skriver in 1-3 elr ngt 
+                catch
                 {
                     Console.Clear();
                     Console.WriteLine("Du måste välja ett nummer ifrån menyn. Tryck på valfri tangent för att försöka igen: ");
                 }
 
-            } while (userInput == 0);//kör sålånge input är 0 / mindre än 3
+            } while (userInput == 0);
 
             switch (userInput)
             {
@@ -162,6 +163,51 @@ namespace Grupparbete_Marshall.Classes
 
             Menus.MenuAtLogin.LoginMenu();
         }
+
+        public static void GetHighscores()
+
+        {
+            //User user = GetUser(this.LostLigters);
+            //var Highscores = this.LostLigthers.Orderby(x => x this.l);
+
+            int HighscoreLostLitghers = 0;
+
+            foreach (var currentObject in User.userList)
+
+            {
+                HighscoreLostLitghers += currentObject._lostLighters;
+                //Console.WriteLine("Highscores LostLitghers: [0]", currentObject.LostLitghers);
+
+            }
+            Console.WriteLine("Highscores is: " + HighscoreLostLitghers);
+
+
+            //User user = GetUser(this.FoundMarschall);
+            //var Highscores = this.FoundMarschall.Orderby(x => x this.f);
+        }
+
+        public static void GetHighscoresMarschall()
+        {
+            int HighscoresFoundMarschall = 0;
+
+
+            foreach (var currentObject in User.userList)
+            {
+                HighscoresFoundMarschall += currentObject._foundMarschall;
+
+                //Console.WriteLine("Highscores Found Marschall: [0]", currentObject.FoundMarschall);
+            }
+            Console.WriteLine("Highscores is: " + HighscoresFoundMarschall);
+
+        }
+
+
     }
 
 }
+
+
+
+
+
+

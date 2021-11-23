@@ -9,12 +9,7 @@ using Grupparbete_Marshall.Classes;
 namespace Grupparbete_Marshall.Methods
 {
     class AddUser
-    //metod skapa anv:
-    //Skapa ett objekt från klassen user
-
     {
-        //try catcha allt
-
         public static void AddUsers()
         {
 
@@ -29,7 +24,6 @@ namespace Grupparbete_Marshall.Methods
 
             try
             {
-                //user.Age = Convert.ToInt32(Console.ReadLine());
                 age = int.Parse(Console.ReadLine());
             }
             catch
@@ -37,19 +31,12 @@ namespace Grupparbete_Marshall.Methods
                 Console.WriteLine("Det var inte en korrekt input, försök igen..");
             }
 
-            //try user age int parse googla det
-            //ev loop.
-
             Console.Write("Ange din Gatuaderss: ");
-           
             string streetAddress = Console.ReadLine();
-            
-          
 
             Console.Write("Ange ditt Postnummer: ");
             try
             {
-               // user.PostNumber = Convert.ToInt32(Console.ReadLine());
                 postNumber = int.Parse(Console.ReadLine());
             }
             catch
@@ -61,7 +48,6 @@ namespace Grupparbete_Marshall.Methods
             LoginUser.currentUser = user;
             Menus.MenuAtLogin.LoginMenu();
             Console.ReadLine();
-
         }
 
 
