@@ -163,26 +163,6 @@ namespace Grupparbete_Marshall.Classes
 
             Menus.MenuAtLogin.LoginMenu();
         }
-        public static void GetHighscores()
-
-        {
-            //User user = GetUser(this.LostLigters);
-            //var Highscores = this.LostLigthers.Orderby(x => x this.l);
-
-            int HighscoreLostLitghers = 0;
-
-            foreach (var currentObject in User.userList)
-
-            {
-                HighscoreLostLitghers += currentObject._lostLighters;
-                //Console.WriteLine("Highscores LostLitghers: [0]", currentObject.LostLitghers);
-
-            }
-            Console.WriteLine("Highscores is: " + HighscoreLostLitghers);
-
-
-
-        }
-
     }
+
 }
