@@ -11,7 +11,7 @@ namespace Grupparbete_Marshall.Methods
 {
     class EndProgram
     {
-        public static void ExitMarshall()
+        public static void ExitMarschall()
         {
 
 
