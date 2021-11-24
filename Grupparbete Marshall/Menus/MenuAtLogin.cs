@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,20 +17,19 @@ namespace Grupparbete_Marshall.Menus
         {
          
             bool isInvalidInput = false;
+
+            int option = 0;
            
 
-            //print menue??
             while (!isInvalidInput)
             {
                 
                 try
                 {
+
+
                     
-                    //Console.WriteLine("Ange ditt ID: ");
-                    //int ID = int.Parse(Console.ReadLine());
-                    //Console.WriteLine("Nuvarande Användare: ");  //user list??
-                    //string name = Console.ReadLine();
-                    //Console.WriteLine();//separation
+                    Console.WriteLine(@"Main menu
 
                     Console.WriteLine("1. Hitta aktiva marschaller i närheten");
                     Console.WriteLine("2. Lista alla aktiva marschaller ");
@@ -45,18 +44,34 @@ namespace Grupparbete_Marshall.Menus
                     Console.WriteLine("9. Visa profil");
                     Console.WriteLine();//separation
 
-                    Console.WriteLine("0. Avsluta programet");
-                    Console.WriteLine("Välj ett alternativ");
-                    int option = int.Parse(Console.ReadLine());
 
+1. Find active marschalls near by
+2. List all active marschalls
+3. Add new marschall
+4. Add existing marschall
+5. Change user settings
 
+6. Filter active marschall
+7. Change user profile
+8. Register lost lighter
+9. Show profile
+0. Exit program");
+
+                   
                     switch (option)
                     {
                         case 1:
+
+                            Console.WriteLine("Find active marschalls near by");
+                            break;
+                        case 2:
+                            Console.WriteLine("List all active marschalls ");
+
                             Console.WriteLine("Hitta aktiva marschaller i närheten");
                             break;
                         case 2:
                             Console.WriteLine("Lista alla aktiva marschaller ");
+
                             Marschall.PrintActiveMarschall();
 
                             break;
@@ -64,13 +79,13 @@ namespace Grupparbete_Marshall.Menus
                             Methods.AddMarschall.AddMarschalls();
                             break;
                         case 4:
-                            Console.WriteLine("Lägg till befintlig marshall"); 
+                            Console.WriteLine("Add existing marschall"); 
                             break;
                         case 5:
-                            Console.WriteLine("Ändra användarinställning");
+                            Console.WriteLine("Change user settings");
                             break;
                         case 6:
-                            Console.WriteLine("Filtrera aktiv marshall");
+                            Console.WriteLine("Filter active marschall");
                             break;
                         case 7:
                             User.EditUserMethod(LoginUser.currentUser);
@@ -82,10 +97,10 @@ namespace Grupparbete_Marshall.Menus
                             User.PrintUser(LoginUser.currentUser);
                             break;
                         case 0:
-                            Console.WriteLine("Avsluta programet!");
+                            Console.WriteLine("Exit program!");
                             break;
                         default:
-                            Console.WriteLine("Invalid input, försök igen!");
+                            Console.WriteLine("Invalid input, try again!");
                             break;
                     }
                 }
