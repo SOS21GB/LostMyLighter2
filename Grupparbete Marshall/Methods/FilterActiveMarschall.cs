@@ -1,13 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Grupparbete_Marshall.Classes;
 
 namespace Grupparbete_Marshall.Methods
 {
     class FilterActiveMarschall
     {
+ 
         public static void FilterMarschall()
         {
 
@@ -35,6 +37,8 @@ namespace Grupparbete_Marshall.Methods
             Console.WriteLine("\n Press any key to return to Main menu");
             Console.ReadKey();
         }
+
+
     }
 }
 
