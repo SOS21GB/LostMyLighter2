@@ -8,18 +8,33 @@ namespace Grupparbete_Marshall.Methods
 {
     class FilterActiveMarschall
     {
-        public static void FilterActiveMarschall(string marschall)
+        public static void FilterMarschall()
+        {
 
-        int filterPostalCode = 0;
+            int filterPostCode = 0;
+            int activeMarschalls = 0;
 
-        //    do
-        //    {
-        //        Console.WriteLine("v�lj postnummer");
-        //    } while (int.TryParse(Console.ReadLine(), out filterPostalCode));
 
-        //    foreach (Marschall m in all.Where(x => x.PostalCode == filterPostalCode))
-        //    {
-        //        Console.WriteLine(m.Print());
-        //    }
+            do
+            {
+                Console.WriteLine("Enter postCode: ");
+                var postCode = int.Parse(Console.ReadLine());
+
+            }
+            while (int.TryParse(Console.ReadLine(), out filterPostCode));
+
+
+            foreach (Marschall m in avtiveMarschalls.Where(x => x.PostCode == filterPostCode))
+            {
+                Console.WriteLine($"All active Marschalls in Postcode: {activeMarschalls}");
+                Console.ReadLine();
+
+
+            }
+
+            Console.WriteLine("\n Press any key to return to Main menu");
+            Console.ReadKey();
+        }
     }
 }
+
