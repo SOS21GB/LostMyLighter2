@@ -24,16 +24,15 @@ namespace Grupparbete_Marshall.Menus
                 {
                     Console.WriteLine(@"Main menu
 
-1. Find active marschalls near by
+1. Add new marschall
 2. List all active marschalls
-3. Add new marschall
-4. Add existing marschall
-5. Change user settings
+3. Filter marschalls by postalcode
+4. Show profile
+5. Change user profile
 
-6. Filter active marschall
-7. Change user profile
-8. Register lost lighter
-9. Show profile
+6. Register a lost lighter
+7. Highscore amount of lost lighters
+8. Highscore amount of found marschalls
 0. Exit program");
 
                     try
@@ -55,7 +54,7 @@ namespace Grupparbete_Marshall.Menus
                 switch (option)
                 {
                     case 1:
-                        Console.WriteLine("Find active marschalls near by");
+                        AddMarschall.AddMarschalls();
                         break;
 
                     case 2:
@@ -63,36 +62,29 @@ namespace Grupparbete_Marshall.Menus
                         break;
 
                     case 3:
-                        AddMarschall.AddMarschalls();
+                        FilterActiveMarschall.FilterMarschall();
                         break;
 
                     case 4:
-                        Console.WriteLine("Add existing marschall");
-                        break;
-
-                    case 5:
-                        Console.WriteLine("Change user settings");
-                        break;
-
-                    case 6:
-                        Console.WriteLine("Filter active marschall");
-                        break;
-
-                    case 7:
-                        User.EditUserMethod(LoginUser.currentUser);
-                        break;
-
-                    case 8:
-                        User.AddLostLighter(LoginUser.currentUser);
-                        break;
-
-                    case 9:
                         User.PrintUser(LoginUser.currentUser);
                         break;
 
-                    case 10:
-                        User.LighterHighscore();
+                    case 5:
+                        User.EditUserMethod(LoginUser.currentUser);
                         break;
+
+                    case 6:
+                        User.AddLostLighter(LoginUser.currentUser);
+                        break;
+
+                    case 7:
+                        User.LighterHighScore();
+                        break;
+
+                    case 8:
+                        User.FoundMarschallScore();
+                        break;                   
+                    
                     case 0:
                         Console.WriteLine("Exit program!");
                         break;

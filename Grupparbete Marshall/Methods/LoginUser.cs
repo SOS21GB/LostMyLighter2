@@ -19,7 +19,22 @@ namespace Grupparbete_Marshall.Methods
 
             currentUser = User.GetUserById(id);
 
-            MenuAtLogin.LoginMenu();
+            if(currentUser == null)
+            {               
+                UserLogin();
+            }
+
+            else
+            {
+                Console.WriteLine("Press any key to clear console and continue to the login screen...");
+                Console.ReadKey();
+                Console.Clear();
+                Menus.MenuAtLogin.LoginMenu();
+            }
+
+          
+
         }
     }
 }
+
