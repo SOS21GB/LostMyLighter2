@@ -34,6 +34,7 @@ ______________ ______________    ___________ _______  ________ ._.
 
             WriteLine("\n Press any key to exit the program");
             ReadKey(true);
+
             Console.WriteLine("Ge oss feedback? [JA/NEJ] ");
             string result = Console.ReadLine();
 

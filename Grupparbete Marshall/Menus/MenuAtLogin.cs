@@ -13,19 +13,15 @@ namespace Grupparbete_Marshall.Menus
 
         public static void LoginMenu()
         {
-         
-            bool isInvalidInput = false;
+
 
             int option = 0;
-           
 
-            while (!isInvalidInput)
+            do
             {
-                
-                try
+                bool isInvalidInput = false;
+                do
                 {
-
- 
                     Console.WriteLine(@"Main menu
 
 1. Find active marschalls near by
@@ -40,61 +36,75 @@ namespace Grupparbete_Marshall.Menus
 9. Show profile
 0. Exit program");
 
-                   
-                    switch (option)
+                    try
                     {
-                        case 1:
-                            Console.WriteLine("Find active marschalls near by");
-                            break;
-                          
-                        case 2:
-                            Marschall.PrintActiveMarschall();
-                            break;
-
-                        case 3:
-                            AddMarschall.AddMarschalls();
-                            break;
-
-                        case 4:
-                            Console.WriteLine("Add existing marschall"); 
-                            break;
-
-                        case 5:
-                            Console.WriteLine("Change user settings");
-                            break;
-
-                        case 6:
-                            Console.WriteLine("Filter active marschall");
-                            break;
-
-                        case 7:
-                            User.EditUserMethod(LoginUser.currentUser);
-                            break;
-
-                        case 8:
-                            User.AddLostLighter(LoginUser.currentUser);
-                            break;
-
-                        case 9:
-                            User.PrintUser(LoginUser.currentUser);
-                            break;
-
-                        case 0:
-                            Console.WriteLine("Exit program!");
-                            break;
-
-                        default:
-                            Console.WriteLine("Invalid input, try again!");
-                            break;
+                        option = int.Parse(Console.ReadLine());
+                        isInvalidInput = false;
+                        break;
                     }
-                }
-                catch (FormatException e)
+
+                    catch
+                    {
+                        Console.WriteLine("Invalid input, try again...");
+                        isInvalidInput = true;
+                    }
+
+
+                } while (isInvalidInput);
+
+                switch (option)
                 {
-                    Console.WriteLine(e.Message);
+                    case 1:
+                        Console.WriteLine("Find active marschalls near by");
+                        break;
+
+                    case 2:
+                        Marschall.PrintActiveMarschall();
+                        break;
+
+                    case 3:
+                        AddMarschall.AddMarschalls();
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Add existing marschall");
+                        break;
+
+                    case 5:
+                        Console.WriteLine("Change user settings");
+                        break;
+
+                    case 6:
+                        Console.WriteLine("Filter active marschall");
+                        break;
+
+                    case 7:
+                        User.EditUserMethod(LoginUser.currentUser);
+                        break;
+
+                    case 8:
+                        User.AddLostLighter(LoginUser.currentUser);
+                        break;
+
+                    case 9:
+                        User.PrintUser(LoginUser.currentUser);
+                        break;
+
+                    case 10:
+                        User.LighterHighscore();
+                        break;
+                    case 0:
+                        Console.WriteLine("Exit program!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid input, try again!");
+                        break;
                 }
-            }
-         
-            Console.ReadLine();
+
+
+            } while (option != 0);
         }
     }
 }
+
