@@ -31,7 +31,7 @@ namespace Grupparbete_Marshall.Methods
                 Console.WriteLine("Det var inte en korrekt input, försök igen..");
             }
 
-            Console.Write("Ange din Gatuaderss: ");
+            Console.Write("Ange din Gatuadress: ");
             string streetAddress = Console.ReadLine();
 
             Console.Write("Ange ditt Postnummer: ");
@@ -46,8 +46,16 @@ namespace Grupparbete_Marshall.Methods
 
             User user = new User(name, age, streetAddress, postNumber);
             LoginUser.currentUser = user;
+
+            Console.WriteLine("You got ID: {0}", user.ID);
+            Console.WriteLine("Remember it, you will use it to log in... ");
+
+
+            Console.WriteLine("Press any key to clear console and return to main menu...");
+            Console.ReadKey();
+            Console.Clear();
             Menus.MenuAtLogin.LoginMenu();
-            Console.ReadLine();
+
         }
 
 

@@ -14,11 +14,11 @@ namespace Grupparbete_Marshall.Classes
 
         public static void InitializeUserList()
         {
-            new Classes.User("Anders Andersson", 30, "Exempeladress 1", 40010, 0, 0, 0);
-            new Classes.User("Anders Johansson", 30, "Exempeladress 2", 40010, 0, 0, 0);
-            new Classes.User("Anders Göransson", 30, "Exempeladress 3", 40010, 0, 0, 5);
-            new Classes.User("Anders Nilsson", 30, "Exempeladress 4", 40010, 0, 0, 0);
-            new Classes.User("Anders Olsson", 30, "Exempeladress 5", 40010, 0, 0, 0);
+            new User("Anders Andersson", 30, "Exempeladress 1", 40010, 0, 0, 0);
+            new User("Anders Johansson", 30, "Exempeladress 2", 40010, 0, 0, 0);
+            new User("Anders Göransson", 30, "Exempeladress 3", 40010, 0, 0, 5);
+            new User("Anders Nilsson", 30, "Exempeladress 4", 40010, 0, 0, 0);
+            new User("Anders Olsson", 30, "Exempeladress 5", 40010, 0, 0, 0);
         }
 
         private int _id;
@@ -65,7 +65,6 @@ namespace Grupparbete_Marshall.Classes
 
         public static void PrintUser(User user)
         {
-
             Console.WriteLine("ID:{0}", user._id);
             Console.WriteLine("Name:{0}", user._name);
             Console.WriteLine("Age:{0}", user._age);
@@ -75,6 +74,10 @@ namespace Grupparbete_Marshall.Classes
             Console.WriteLine("Found Marchall:{0}", user._foundMarschall);
             Console.WriteLine("Lost Lighters:{0}", user._lostLighters);
 
+            Console.WriteLine("Press any key to clear console and return to main menu...");
+            Console.ReadKey();
+            Console.Clear();
+            Menus.MenuAtLogin.LoginMenu();
         }
 
         public static string GetUserName(User user)
@@ -115,8 +118,9 @@ namespace Grupparbete_Marshall.Classes
             Console.WriteLine("Lost lighter has been recorded");
 
 
-            Console.WriteLine("\n Press any key to return to Main menu");
+            Console.WriteLine("Press any key to clear console and return to main menu...");
             Console.ReadKey();
+            Console.Clear();
             Menus.MenuAtLogin.LoginMenu();
         }
 
@@ -161,10 +165,40 @@ namespace Grupparbete_Marshall.Classes
                     break;
             }
 
+            Console.WriteLine("Press any key to clear console and return to main menu...");
+            Console.ReadKey();
+            Console.Clear();
             Menus.MenuAtLogin.LoginMenu();
         }
 
+        public static void FoundMarschallScore()
 
+        {
+
+            User TopScores = new User();
+            foreach (var users in userList)
+            {
+
+                if (users == null)
+                {
+                    break;
+                }
+                if (users._foundMarschall > TopScores._foundMarschall)
+                {
+                    TopScores = users;
+                }
+
+            }
+            Console.WriteLine("The user who has found the most marschalls is... ");
+            Console.WriteLine();
+            PrintUser(TopScores);
+
+            Console.WriteLine("Press any key to clear console and return to main menu...");
+            Console.ReadKey();
+            Console.Clear();
+            Menus.MenuAtLogin.LoginMenu();
+
+        }
         public static void LighterHighScore()
 
         {
@@ -178,52 +212,37 @@ namespace Grupparbete_Marshall.Classes
                 if (users._lostLighters > TopScores._lostLighters)
 
                 {
-
-                    {
-
                     TopScores = users;
                 }
+                Console.WriteLine("The user who has lost the most lighters is... ");
+                Console.WriteLine();
+                PrintUser(TopScores);
+
+                Console.WriteLine("Press any key to clear console and return to main menu...");
+                Console.ReadKey();
+                Console.Clear();
+                Menus.MenuAtLogin.LoginMenu();
             }
 
-            PrintUser(TopScores);
-
-        }
-
-        public static void FoundMaschallScore()
-        { 
-
-         User TopScores = new User();
-         foreach (var users in userList)
-         { 
-          
-              if (users == null) 
-             {  
-                break; 
-              }
-              if (users._foundMarschall > TopScores._foundMarschall)
-              {
-                    TopScores = users;
-              }
-        
-         } PrintUser(TopScores);
-         
-         }
-        
-     
-
-      
-            
-     }
 
 
 
-           
+
 
 
         }
-
-
     }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
