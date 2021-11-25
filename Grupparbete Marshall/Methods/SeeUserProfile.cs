@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 namespace Grupparbete_Marshall.Methods
 {
     class SeeUserProfile
+    { 
+     }
+
 
 
         
@@ -21,4 +24,4 @@ namespace Grupparbete_Marshall.Methods
     }
 
 
-}
+
