@@ -164,45 +164,40 @@ namespace Grupparbete_Marshall.Classes
             Menus.MenuAtLogin.LoginMenu();
         }
 
-        public static void GetHighscores()
+        public static void LighterHighScore()
 
         {
-            //User user = GetUser(this.LostLigters);
-            //var Highscores = this.LostLigthers.Orderby(x => x this.l);
-
-            int HighscoreLostLitghers = 0;
-
-            foreach (var currentObject in User.userList)
-
+            User TopScores = new User();
+            foreach (var users in userList)
             {
-                HighscoreLostLitghers += currentObject._lostLighters;
-                //Console.WriteLine("Highscores LostLitghers: [0]", currentObject.LostLitghers);
+                if (users == null)
+                {
+                    break;
+                }
+                if (users._lostLighters > TopScores._lostLighters)
 
+                    {
+                    TopScores = users;
+                }
             }
-            Console.WriteLine("Highscores is: " + HighscoreLostLitghers);
 
+            PrintUser(TopScores);
+           
 
-            //User user = GetUser(this.FoundMarschall);
-            //var Highscores = this.FoundMarschall.Orderby(x => x this.f);
-        }
-
-        public static void GetHighscoresMarschall()
-        {
-            int HighscoresFoundMarschall = 0;
-
-
-            foreach (var currentObject in User.userList)
-            {
-                HighscoresFoundMarschall += currentObject._foundMarschall;
-
-                //Console.WriteLine("Highscores Found Marschall: [0]", currentObject.FoundMarschall);
-            }
-            Console.WriteLine("Highscores is: " + HighscoresFoundMarschall);
 
         }
-        
 
     }
+
+
+
+
+
+
+
+
+
+}
 
 }
 
