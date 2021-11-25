@@ -23,21 +23,24 @@ namespace Grupparbete_Marshall.Classes
         string region;
         int postalCode;
 
-        public DateTime Burnout {
-            get { return  burnout; }
+        public DateTime Burnout
+        {
+            get { return burnout; }
             set { burnout = value; }
         }
-        
-        public int PostalCode {
-            get { return  postalCode; }
+
+        public int PostalCode
+        {
+            get { return postalCode; }
             set { postalCode = value; }
         }
 
-        public User RegUser {
-            get { return  reg_user; }
+        public User RegUser
+        {
+            get { return reg_user; }
             set { reg_user = value; }
         }
-        public Marschall(string _brand, double bTime, int i, string sName, int sNumber,  int pCode)
+        public Marschall(string _brand, double bTime, int i, string sName, int sNumber, int pCode)
         {
             id = marschallList.Count + 1;
             brand = _brand;
@@ -46,8 +49,8 @@ namespace Grupparbete_Marshall.Classes
             burntime = bTime;
             burnout = reg_stamp.AddMinutes(burntime);
             streetName = sName;
-            streetNumber = sNumber;            
-            postalCode = pCode;            
+            streetNumber = sNumber;
+            postalCode = pCode;
             marschallList.Add(this);
         }
         public Marschall(int i, int id, double bt, DateTime dt, int pc)
@@ -63,27 +66,27 @@ namespace Grupparbete_Marshall.Classes
         {
             DateTime date1 = new DateTime(2021, 11, 16, 12, 0, 0, 0);
 
-            new Marschall( "Solstickan", 2, 2, "Nergårdsvägen", 43, 43636);
-            new Marschall( "Solstickan", 2, 1, "Pilegårdsvägen", 1, 43635);
-            new Marschall( "Solstickan", 2, 4, "Tycho Brahes gata", 11, 41517);
+            new Marschall("Solstickan", 2, 2, "Nergårdsvägen", 43, 43636);
+            new Marschall("Solstickan", 2, 1, "Pilegårdsvägen", 1, 43635);
+            new Marschall("Solstickan", 2, 4, "Tycho Brahes gata", 11, 41517);
             new Marschall(4, 2, 1, date1, 41517);
             new Marschall(5, 3, 1, date1, 43636);
         }
-        
-        public static void PrintActiveMarschall() 
+
+        public static void PrintActiveMarschall()
         {
-            var activeMarshall = marschallList.Where(marshall => marshall.burnout > DateTime.Now);
-            foreach (Marschall m in activeMarshall)
+            var activeMarschall = marschallList.Where(marschall => marschall.burnout > DateTime.Now);
+            foreach (Marschall m in activeMarschall)
             {
                 Console.WriteLine("ID {0}", m.id);
                 Console.WriteLine("Registered at: {0}", m.reg_stamp);
                 Console.WriteLine("Burnes out at: {0}", m.burnout);
-                Console.WriteLine("Registered by: {0}", Classes.User.GetUserName(m.reg_user));
+                Console.WriteLine("Registered by: {0}", User.GetUserName(m.reg_user));
 
-                
+
                 //LoginMenu.StartLoginMenu(); Mintamir
             }
 
         }
     }
-}	
+}

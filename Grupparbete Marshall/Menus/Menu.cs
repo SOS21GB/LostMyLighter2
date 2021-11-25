@@ -57,6 +57,7 @@ namespace Grupparbete_Marshall.Menus
                 DisplayOptions();
                 ConsoleKeyInfo keyInfo = ReadKey(true);
                 keyPressed = keyInfo.Key;
+                Console.Beep();
 
                 if (keyPressed == ConsoleKey.UpArrow)
                 {
