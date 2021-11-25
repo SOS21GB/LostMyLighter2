@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,90 +12,99 @@ namespace Grupparbete_Marshall.Menus
     {
 
         public static void LoginMenu()
-
-
         {
-         
-            bool isInvalidInput = false;
-           
 
-            //print menue??
-            while (!isInvalidInput)
+
+            int option = 0;
+
+            do
             {
-                
-                try
+                bool isInvalidInput = false;
+                do
                 {
-                    
-                    //Console.WriteLine("Ange ditt ID: ");
-                    //int ID = int.Parse(Console.ReadLine());
-                    //Console.WriteLine("Nuvarande Användare: ");  //user list??
-                    //string name = Console.ReadLine();
-                    //Console.WriteLine();//separation
+                    Console.WriteLine(@"Main menu
 
-                    Console.WriteLine("1. Hitta aktiva marshalls i närheten");
-                    Console.WriteLine("2. Lista alla aktiva marshalls ");
-                    Console.WriteLine("3. Lägg till ny marshall ");
-                    Console.WriteLine("4. Lägg till befintlig marshall");
-                    Console.WriteLine();//separation
+1. Find active marschalls near by
+2. List all active marschalls
+3. Add new marschall
+4. Add existing marschall
+5. Change user settings
 
-                    Console.WriteLine("5. Ändra användarinställning");
-                    Console.WriteLine("6. Filtrera aktiv marshall");
-                    Console.WriteLine("7. Ändra i användarprofil");
-                    Console.WriteLine("8. Registrera förlorad tändare");
-                    Console.WriteLine("9. Visa profil");
-                    Console.WriteLine();//separation
+6. Filter active marschall
+7. Change user profile
+8. Register lost lighter
+9. Show profile
+0. Exit program");
 
-                    Console.WriteLine("0. Avsluta programet");
-                    Console.WriteLine("Välj ett alternativ");
-                    int option = int.Parse(Console.ReadLine());
-
-
-                    switch (option)
+                    try
                     {
-                        case 1:
-                            Console.WriteLine("Hitta aktiva marshalls i närheten");
-                            break;
-                        case 2:
-                            Console.WriteLine("Lista alla aktiva marshalls ");
-                            Marschall.PrintActiveMarschall();
-
-                            break;
-                        case 3:
-                            Methods.AddMarschall.AddMarshalls();
-                            break;
-                        case 4:
-                            Console.WriteLine("Lägg till befintlig marshall"); 
-                            break;
-                        case 5:
-                            Console.WriteLine("Ändra användarinställning");
-                            break;
-                        case 6:
-                            Console.WriteLine("Filtrera aktiv marshall");
-                            break;
-                        case 7:
-                            User.EditUserMethod(LoginUser.currentUser);
-                            break;
-                        case 8:
-                            User.AddLostLighter(LoginUser.currentUser);
-                            break;
-                        case 9:
-                            User.PrintUser(LoginUser.currentUser);
-                            break;
-                        case 0:
-                            Console.WriteLine("Avsluta programet!");
-                            break;
-                        default:
-                            Console.WriteLine("Invalid input, försök igen!");
-                            break;
+                        option = int.Parse(Console.ReadLine());
+                        isInvalidInput = false;
+                        break;
                     }
-                }
-                catch (FormatException e)
+
+                    catch
+                    {
+                        Console.WriteLine("Invalid input, try again...");
+                        isInvalidInput = true;
+                    }
+
+
+                } while (isInvalidInput);
+
+                switch (option)
                 {
-                    Console.WriteLine(e.Message);
+                    case 1:
+                        Console.WriteLine("Find active marschalls near by");
+                        break;
+
+                    case 2:
+                        Marschall.PrintActiveMarschall();
+                        break;
+
+                    case 3:
+                        AddMarschall.AddMarschalls();
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Add existing marschall");
+                        break;
+
+                    case 5:
+                        Console.WriteLine("Change user settings");
+                        break;
+
+                    case 6:
+                        Console.WriteLine("Filter active marschall");
+                        break;
+
+                    case 7:
+                        User.EditUserMethod(LoginUser.currentUser);
+                        break;
+
+                    case 8:
+                        User.AddLostLighter(LoginUser.currentUser);
+                        break;
+
+                    case 9:
+                        User.PrintUser(LoginUser.currentUser);
+                        break;
+
+                    case 10:
+                        User.LighterHighscore();
+                        break;
+                    case 0:
+                        Console.WriteLine("Exit program!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid input, try again!");
+                        break;
                 }
-            }
-         
-            Console.ReadLine();
+
+
+            } while (option != 0);
         }
     }
 }
+

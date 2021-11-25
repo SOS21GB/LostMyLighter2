@@ -9,19 +9,19 @@ namespace Grupparbete_Marshall.Methods
 {
     class AddMarschall
     {
-        public static void AddMarshalls()
+        public static void AddMarschalls()
         {
             double burnTime = 0;
             int streetNumber = 0;
             int postalCode = 0;
 
-            Console.Write("Ange marshallens märke: ");
+            Console.Write("Ange marschallens märke: ");
             string brand = Console.ReadLine();
 
-            Console.Write("Ange gatuadressen där marshallen är lokaliserad: ");
+            Console.Write("Ange gatuadressen där marschallen är lokaliserad: ");
             string streetName = Console.ReadLine();
 
-            Console.Write("Ange gatunummret där marshallen är lokaliserad: ");
+            Console.Write("Ange gatunummret där marschallen är lokaliserad: ");
             try
             {
                 streetNumber = int.Parse(Console.ReadLine());
@@ -31,7 +31,7 @@ namespace Grupparbete_Marshall.Methods
                 Console.WriteLine("Det var inte en korrekt input, försök igen..");
             }
 
-            Console.Write("Ange postkoden där marshallen är lokaliserad: ");
+            Console.Write("Ange postkoden där marschallen är lokaliserad: ");
             try
             {
                 postalCode = int.Parse(Console.ReadLine());
@@ -41,7 +41,7 @@ namespace Grupparbete_Marshall.Methods
                 Console.WriteLine("Det var inte en korrekt input, försök igen..");
             }
 
-            Console.Write("Ange marshallens brinntid i minuter: ");
+            Console.Write("Ange marschallens brinntid i minuter: ");
             try
             {
                 burnTime = double.Parse(Console.ReadLine());
@@ -51,9 +51,9 @@ namespace Grupparbete_Marshall.Methods
                 Console.WriteLine("Det var inte en korrekt input, försök igen..");
             }
 
-            Console.WriteLine("Marshallen registerades klockan {0}", DateTime.Now);
+            Console.WriteLine("Marschallen registerades klockan {0}", DateTime.Now);
 
-            Console.WriteLine("Marshallen förväntas slockna klockan {0} ", DateTime.Now.AddMinutes(burnTime));
+            Console.WriteLine("Marschallen förväntas slockna klockan {0} ", DateTime.Now.AddMinutes(burnTime));
 
             Marschall marschall = new Marschall(brand, burnTime, LoginUser.currentUser.ID, streetName, streetNumber, postalCode);
             User.AddFoundMarshall(LoginUser.currentUser);

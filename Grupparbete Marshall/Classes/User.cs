@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +16,7 @@ namespace Grupparbete_Marshall.Classes
         {
             new Classes.User("Anders Andersson", 30, "Exempeladress 1", 40010, 0, 0, 0);
             new Classes.User("Anders Johansson", 30, "Exempeladress 2", 40010, 0, 0, 0);
-            new Classes.User("Anders Göransson", 30, "Exempeladress 3", 40010, 0, 0, 0);
+            new Classes.User("Anders Göransson", 30, "Exempeladress 3", 40010, 0, 0, 5);
             new Classes.User("Anders Nilsson", 30, "Exempeladress 4", 40010, 0, 0, 0);
             new Classes.User("Anders Olsson", 30, "Exempeladress 5", 40010, 0, 0, 0);
         }
@@ -163,6 +163,7 @@ namespace Grupparbete_Marshall.Classes
 
             Menus.MenuAtLogin.LoginMenu();
         }
+
         public static void LighterHighScore()
 
         {
@@ -186,7 +187,6 @@ namespace Grupparbete_Marshall.Classes
 
         }
 
-
     }
 
 
@@ -200,3 +200,9 @@ namespace Grupparbete_Marshall.Classes
 }
 
 }
+
+
+
+
+
+
