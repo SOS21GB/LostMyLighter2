@@ -18,7 +18,7 @@ namespace Grupparbete_Marshall.Methods
             int id = int.Parse(Console.ReadLine());
 
             currentUser = User.GetUserById(id);
-
+            
             MenuAtLogin.LoginMenu();
         }
     }

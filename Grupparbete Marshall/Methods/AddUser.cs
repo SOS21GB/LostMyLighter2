@@ -15,11 +15,11 @@ namespace Grupparbete_Marshall.Methods
 
             int age = 0;
             int postNumber = 0;
-
+            Console.Clear();
             Console.Write("Ange ditt namn: ");
             string name = Console.ReadLine();
 
-
+            Console.Clear();
             Console.Write("Ange din ålder: ");
 
             try
@@ -30,10 +30,11 @@ namespace Grupparbete_Marshall.Methods
             {
                 Console.WriteLine("Det var inte en korrekt input, försök igen..");
             }
-
+            Console.Clear();
             Console.Write("Ange din Gatuaderss: ");
             string streetAddress = Console.ReadLine();
 
+            Console.Clear();
             Console.Write("Ange ditt Postnummer: ");
             try
             {
