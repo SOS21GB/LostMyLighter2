@@ -163,6 +163,56 @@ namespace Grupparbete_Marshall.Classes
 
             Menus.MenuAtLogin.LoginMenu();
         }
+
+
+        public static void LighterHighScore()
+
+        {
+            User TopScores = new User();
+            foreach (var users in userList)
+            {
+                if (users == null)
+                {
+                    break;
+                }
+                if (users._lostLighters > TopScores._lostLighters)
+
+                {
+                    TopScores = users;
+                }
+            }
+
+            PrintUser(TopScores);
+        }
+
+        public static void FoundMaschallScore()
+        { 
+
+         User TopScores = new User();
+         foreach (var users in userList)
+         { 
+          
+              if (users == null) 
+             {  
+                break; 
+              }
+              if (users._foundMarschall > TopScores._foundMarschall)
+              {
+                    TopScores = users;
+              }
+        
+         } PrintUser(TopScores);
+         
+         }
+        
+     
+
+      
+            
+     }
+
+
+
     }
 
-}
+
