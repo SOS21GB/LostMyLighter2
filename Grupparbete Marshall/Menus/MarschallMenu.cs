@@ -8,8 +8,10 @@ namespace Grupparbete_Marshall.Menus
 {
     class MarschallMenu
     {
-        
-        static void Run(User me, List<Marschall> all)
+        List<Marschall> all;
+        List<Marschall> active;
+
+        static void Run(User me)
         {
             int select = 0;
             do {
@@ -49,11 +51,6 @@ namespace Grupparbete_Marshall.Menus
                     new Marschall(me, sBrand, sa, sb, sc, sd, sBurn); // add to MarschallList
                     break;
                 case 2:
-                    List <Marschall> active =
-                        from x in all
-                        where DateTime.Compare(x.BurnTime, DateTime.Now)
-                        select x;
-
                     foreach (Marschall m in active)
                     {
                         Console.WriteLine(m.Print());
