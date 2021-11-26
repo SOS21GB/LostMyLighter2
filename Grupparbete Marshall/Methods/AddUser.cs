@@ -41,6 +41,7 @@ namespace Grupparbete_Marshall.Methods
             }
             catch
             {
+                Console.Clear();    
                 Console.WriteLine("Det var inte en korrekt input, försök igen..");
             }
 
