@@ -1,14 +1,10 @@
+using Grupparbete_Marshall.Methods;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Console;
-using Grupparbete_Marshall.Methods;
 
 namespace Grupparbete_Marshall.Classes
 {
-    class User
+    internal class User
     {
         public static List<User> userList = new List<User>();
 
@@ -70,7 +66,7 @@ namespace Grupparbete_Marshall.Classes
             Console.WriteLine("Age:{0}", user._age);
             Console.WriteLine("Street Adress:{0}", user._streetAddress);
             Console.WriteLine("Post Number:{0}", user._postNumber);
-            Console.WriteLine("Number Of Seach:{0}", user._numberOfSearch);
+            Console.WriteLine("Number Of Search:{0}", user._numberOfSearch);
             Console.WriteLine("Found Marchall:{0}", user._foundMarschall);
             Console.WriteLine("Lost Lighters:{0}", user._lostLighters);
 
@@ -84,6 +80,7 @@ namespace Grupparbete_Marshall.Classes
         {
             return user._name;
         }
+
         public static User GetUserById(int id)
         {
             foreach (User u in userList)
@@ -117,7 +114,6 @@ namespace Grupparbete_Marshall.Classes
 
             Console.WriteLine("Lost lighter has been recorded");
 
-
             Console.WriteLine("Press any key to clear console and return to main menu...");
             Console.ReadKey();
             Console.Clear();
@@ -144,7 +140,6 @@ namespace Grupparbete_Marshall.Classes
                     Console.Clear();
                     Console.WriteLine("You must select a number from the menu. Press any key to try again: ");
                 }
-
             } while (userInput == 0);
 
             switch (userInput)
@@ -174,11 +169,9 @@ namespace Grupparbete_Marshall.Classes
         public static void FoundMarschallScore()
 
         {
-
             User TopScores = new User();
             foreach (var users in userList)
             {
-
                 if (users == null)
                 {
                     break;
@@ -187,7 +180,6 @@ namespace Grupparbete_Marshall.Classes
                 {
                     TopScores = users;
                 }
-
             }
             Console.WriteLine("The user who has found the most marschalls is... ");
             Console.WriteLine();
@@ -197,8 +189,8 @@ namespace Grupparbete_Marshall.Classes
             Console.ReadKey();
             Console.Clear();
             Menus.MenuAtLogin.LoginMenu();
-
         }
+
         public static void LighterHighScore()
 
         {
@@ -223,26 +215,6 @@ namespace Grupparbete_Marshall.Classes
                 Console.Clear();
                 Menus.MenuAtLogin.LoginMenu();
             }
-
-
-
-
-
-
-
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,21 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Grupparbete_Marshall.Classes;
+using System;
+using System.Linq;
 
 namespace Grupparbete_Marshall.Methods
 {
-    class FilterActiveMarschall
+    internal class FilterActiveMarschall
     {
-
         public static void FilterMarschall()
         {
-
             int filterPostCode = 0;
-            
-
 
             Console.WriteLine("Enter postCode: ");
             filterPostCode = int.Parse(Console.ReadLine());
@@ -28,14 +21,11 @@ namespace Grupparbete_Marshall.Methods
             {
                 Marschall.PrintMarschall(marschall);
             }
-
+            User.AddSearch(LoginUser.currentUser);
             Console.WriteLine("\n Press any key to return to Main menu");
             Console.ReadKey();
             Console.Clear();
             Menus.MenuAtLogin.LoginMenu();
         }
-
-
     }
 }
-

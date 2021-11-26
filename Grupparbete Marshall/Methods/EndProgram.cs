@@ -1,20 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using static System.Console;
-using Grupparbete_Marshall.Menus;
-
 
 namespace Grupparbete_Marshall.Methods
 {
-    class EndProgram
+    internal class EndProgram
     {
         public static void ExitMarschall()
         {
-
-
             string text = @"
 ______________ ______________    ___________ _______  ________ ._.
 \__    ___/   |   \_   _____/    \_   _____/ \      \ \______ \| |
@@ -38,23 +31,26 @@ ______________ ______________    ___________ _______  ________ ._.
             Console.WriteLine("Give us feedback? [YES/NO] ");
             string result = Console.ReadLine();
 
-            if (result == "YES")
+            if (result.ToUpper() == "YES")
             {
                 Console.WriteLine("Thank you for giving us feedback!");
                 Console.WriteLine("Scale 1 to 5, How you thaught it was?: ");
                 int tal = Convert.ToInt32(Console.ReadLine());
-
+                Console.Clear();
 
                 Console.WriteLine("Thank you for your response");
             }
-
-
-            else if (result == "NO")
+            else if (result.ToUpper() == "NO")
             {
+                Console.Clear();
                 Console.WriteLine("Thank you for your time!");
             }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Fine...");
+            }
+            Environment.Exit(0);
         }
-
-
     }
 }

@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Grupparbete_Marshall.Classes;
-
+﻿using Grupparbete_Marshall.Classes;
+using System;
 
 namespace Grupparbete_Marshall.Methods
 {
-    class AddUser
+    internal class AddUser
     {
         public static void AddUsers()
         {
-
             int age = 0;
             int postNumber = 0;
 
             Console.Write("Enter your name: ");
             string name = Console.ReadLine();
-
 
             Console.Write("Enter your age: ");
 
@@ -41,10 +34,8 @@ namespace Grupparbete_Marshall.Methods
             }
             catch
             {
-
-                Console.Clear(); 
+                Console.Clear();
                 Console.WriteLine("Invalid input, try again..");
-
             }
 
             User user = new User(name, age, streetAddress, postNumber);
@@ -53,15 +44,10 @@ namespace Grupparbete_Marshall.Methods
             Console.WriteLine("You got ID: {0}", user.ID);
             Console.WriteLine("Remember it, you will use it to log in... ");
 
-
             Console.WriteLine("Press any key to clear console and return to main menu...");
             Console.ReadKey();
             Console.Clear();
             Menus.MenuAtLogin.LoginMenu();
-
         }
-
-
-
     }
 }

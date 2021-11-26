@@ -1,20 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Grupparbete_Marshall.Classes;
 using Grupparbete_Marshall.Methods;
+using System;
 
 namespace Grupparbete_Marshall.Menus
 {
-    class MenuAtLogin
+    internal class MenuAtLogin
     {
-
         public static void LoginMenu()
         {
-
-
             int option = 0;
 
             do
@@ -23,8 +16,8 @@ namespace Grupparbete_Marshall.Menus
                 do
                 {
                     Console.WriteLine(@"Main menu
-
-1. Add new marschall
+0. Add new marschall
+1. List all registered marschalls
 2. List all active marschalls
 3. Filter marschalls by postalcode
 4. Show profile
@@ -33,7 +26,7 @@ namespace Grupparbete_Marshall.Menus
 6. Register a lost lighter
 7. Highscore amount of lost lighters
 8. Highscore amount of found marschalls
-0. Exit program");
+9. Log out");
 
                     try
                     {
@@ -41,20 +34,21 @@ namespace Grupparbete_Marshall.Menus
                         isInvalidInput = false;
                         break;
                     }
-
                     catch
                     {
                         Console.WriteLine("Invalid input, try again...");
                         isInvalidInput = true;
                     }
-
-
                 } while (isInvalidInput);
 
                 switch (option)
                 {
-                    case 1:
+                    case 0:
                         AddMarschall.AddMarschalls();
+                        break;
+
+                    case 1:
+                        Marschall.PrintAllMarschalls();
                         break;
 
                     case 2:
@@ -83,20 +77,17 @@ namespace Grupparbete_Marshall.Menus
 
                     case 8:
                         User.FoundMarschallScore();
-                        break;                   
-                    
-                    case 0:
-                        EndProgram.ExitMarschall();
+                        break;
+
+                    case 9:
+                        Startmenu.RunStartMenu();
                         break;
 
                     default:
                         Console.WriteLine("Invalid input, try again!");
                         break;
                 }
-
-
             } while (option != 0);
         }
     }
 }
-
