@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Grupparbete_Marshall.Classes;
+﻿using Grupparbete_Marshall.Classes;
+using System;
 
 namespace Grupparbete_Marshall.Methods
 {
-    class AddMarschall
+    internal class AddMarschall
     {
         public static void AddMarschalls()
         {
@@ -28,11 +24,9 @@ namespace Grupparbete_Marshall.Methods
             }
             catch
             {
-
                 Console.Clear();
 
                 Console.WriteLine("Invalid input, try again..");
-
             }
 
             Console.Write("Enter the postal code where the marschall is located: ");
@@ -42,10 +36,8 @@ namespace Grupparbete_Marshall.Methods
             }
             catch
             {
-
                 Console.Clear();
                 Console.WriteLine("Invalid input, try again..");
-
             }
 
             Console.Write("Enter the marschall's burning time in minutes: ");
@@ -55,10 +47,8 @@ namespace Grupparbete_Marshall.Methods
             }
             catch
             {
-
                 Console.Clear();
                 Console.WriteLine("Invalid input, try again..");
-
             }
 
             Console.WriteLine("The marschall was registered at {0}", DateTime.Now);
@@ -75,4 +65,3 @@ namespace Grupparbete_Marshall.Methods
         }
     }
 }
-

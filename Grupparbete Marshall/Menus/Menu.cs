@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static System.Console;
 
 namespace Grupparbete_Marshall.Menus
 {
-    class Menu
+    internal class Menu
     {
         private int SelectedIndex;
         private string[] Options;
@@ -18,7 +14,6 @@ namespace Grupparbete_Marshall.Menus
             Prompt = prompt;
             Options = options;
             SelectedIndex = 0;
-
         }
 
         private void DisplayOptions()
@@ -78,6 +73,5 @@ namespace Grupparbete_Marshall.Menus
             } while (keyPressed != ConsoleKey.Enter);
             return SelectedIndex;
         }
-
     }
 }
