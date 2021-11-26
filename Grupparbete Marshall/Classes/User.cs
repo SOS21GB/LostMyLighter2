@@ -130,10 +130,10 @@ namespace Grupparbete_Marshall.Classes
 
             do
             {
-                Console.WriteLine("Välj vad vill du ändra: ");
-                Console.WriteLine("1. Ändra namn");
-                Console.WriteLine("2. Ändra ålder");
-                Console.WriteLine("3. Ändra adress");
+                Console.WriteLine("Choose what you want to change: ");
+                Console.WriteLine("1. Change name");
+                Console.WriteLine("2. Change age");
+                Console.WriteLine("3. Change address");
 
                 try
                 {
@@ -142,7 +142,7 @@ namespace Grupparbete_Marshall.Classes
                 catch
                 {
                     Console.Clear();
-                    Console.WriteLine("Du måste välja ett nummer ifrån menyn. Tryck på valfri tangent för att försöka igen: ");
+                    Console.WriteLine("You must select a number from the menu. Press any key to try again: ");
                 }
 
             } while (userInput == 0);
@@ -150,17 +150,17 @@ namespace Grupparbete_Marshall.Classes
             switch (userInput)
             {
                 case 1:
-                    Console.WriteLine("Ändra namn: ");
+                    Console.WriteLine("Change name: ");
                     LoginUser.currentUser._name = Console.ReadLine();
                     break;
 
                 case 2:
-                    Console.WriteLine("Ändra ålder: ");
+                    Console.WriteLine("Change age: ");
                     LoginUser.currentUser._age = Convert.ToInt32(Console.ReadLine());
                     break;
 
                 case 3:
-                    Console.WriteLine("Ändra address: ");
+                    Console.WriteLine("Change address: ");
                     LoginUser.currentUser._streetAddress = Console.ReadLine();
                     break;
             }

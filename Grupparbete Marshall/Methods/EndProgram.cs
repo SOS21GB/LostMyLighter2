@@ -35,23 +35,23 @@ ______________ ______________    ___________ _______  ________ ._.
             WriteLine("\n Press any key to exit the program");
             ReadKey(true);
 
-            Console.WriteLine("Ge oss feedback? [JA/NEJ] ");
+            Console.WriteLine("Give us feedback? [YES/NO] ");
             string result = Console.ReadLine();
 
-            if (result == "JA")
+            if (result == "YES")
             {
-                Console.WriteLine("Tack för att du vill ge oss Feedback!");
-                Console.WriteLine("Skala 1 till 5, hur du tyckte detta var?: ");
+                Console.WriteLine("Thank you for giving us feedback!");
+                Console.WriteLine("Scale 1 to 5, How you thaught it was?: ");
                 int tal = Convert.ToInt32(Console.ReadLine());
 
 
-                Console.WriteLine("Tack för för ditt svar");
+                Console.WriteLine("Thank you for your response");
             }
 
 
-            else if (result == "NEJ")
+            else if (result == "NO")
             {
-                Console.WriteLine("Tack för din tid");
+                Console.WriteLine("Thank you for your time!");
             }
         }
 

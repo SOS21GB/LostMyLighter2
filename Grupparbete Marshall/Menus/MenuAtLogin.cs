@@ -86,7 +86,7 @@ namespace Grupparbete_Marshall.Menus
                         break;                   
                     
                     case 0:
-                        Console.WriteLine("Exit program!");
+                        EndProgram.ExitMarschall();
                         break;
 
                     default:
