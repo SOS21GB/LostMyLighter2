@@ -16,11 +16,11 @@ namespace Grupparbete_Marshall.Methods
             int age = 0;
             int postNumber = 0;
 
-            Console.Write("Ange ditt namn: ");
+            Console.Write("Enter your name: ");
             string name = Console.ReadLine();
 
 
-            Console.Write("Ange din ålder: ");
+            Console.Write("Enter your age: ");
 
             try
             {
@@ -28,20 +28,20 @@ namespace Grupparbete_Marshall.Methods
             }
             catch
             {
-                Console.WriteLine("Det var inte en korrekt input, försök igen..");
+                Console.WriteLine("Invalid input, try again ..");
             }
 
-            Console.Write("Ange din Gatuadress: ");
+            Console.Write("Enter your Street Address: ");
             string streetAddress = Console.ReadLine();
 
-            Console.Write("Ange ditt Postnummer: ");
+            Console.Write("Enter your Postcode: ");
             try
             {
                 postNumber = int.Parse(Console.ReadLine());
             }
             catch
             {
-                Console.WriteLine("Det var inte en korrekt input, försök igen..");
+                Console.WriteLine("Invalid input, try again..");
             }
 
             User user = new User(name, age, streetAddress, postNumber);
