@@ -1,12 +1,67 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Grupparbete_Marshall.Classes;
+using System;
 
 namespace Grupparbete_Marshall.Methods
 {
-    class AddMarschall
+    internal class AddMarschall
     {
+        public static void AddMarschalls()
+        {
+            double burnTime = 0;
+            int streetNumber = 0;
+            int postalCode = 0;
+
+            Console.Write("Enter the marschall's brand: ");
+            string brand = Console.ReadLine();
+
+            Console.Write("Enter the street address where the marschall is located: ");
+            string streetName = Console.ReadLine();
+
+            Console.Write("Enter the street number where the marschall is located: ");
+            try
+            {
+                streetNumber = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.Clear();
+
+                Console.WriteLine("Invalid input, try again..");
+            }
+
+            Console.Write("Enter the postal code where the marschall is located: ");
+            try
+            {
+                postalCode = int.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.Clear();
+                Console.WriteLine("Invalid input, try again..");
+            }
+
+            Console.Write("Enter the marschall's burning time in minutes: ");
+            try
+            {
+                burnTime = double.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.Clear();
+                Console.WriteLine("Invalid input, try again..");
+            }
+
+            Console.WriteLine("The marschall was registered at {0}", DateTime.Now);
+
+            Console.WriteLine("The marschall is expected to burn out at {0} ", DateTime.Now.AddMinutes(burnTime));
+
+            Marschall marschall = new Marschall(brand, burnTime, LoginUser.currentUser.ID, streetName, streetNumber, postalCode);
+            User.AddFoundMarshall(LoginUser.currentUser);
+
+            Console.WriteLine("Press any key to clear console and return to main menu...");
+            Console.ReadKey();
+            Console.Clear();
+            Menus.MenuAtLogin.LoginMenu();
+        }
     }
 }

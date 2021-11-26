@@ -1,79 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Grupparbete_Marshall.Classes;
+using System;
 
 namespace Grupparbete_Marshall.Methods
 {
-    class AddUser
-    //metod skapa anv:
-    //Skapa ett objekt från klassen user
-
+    internal class AddUser
     {
-        //try catcha allt
-
         public static void AddUsers()
         {
-            Classes.User user = new Classes.User(); //instancierat, först hänvisa t mappen classes sen till klassen man vill använda
+            int age = 0;
+            int postNumber = 0;
 
-            //user id saknas
+            Console.Write("Enter your name: ");
+            string name = Console.ReadLine();
 
-            Console.Write("Ange ditt namn: ");
-            user.Name = Console.ReadLine();
-
-
-            Console.Write("Ange din ålder: ");
+            Console.Write("Enter your age: ");
 
             try
             {
-                //user.Age = Convert.ToInt32(Console.ReadLine());
-                user.Age = int.Parse(Console.ReadLine());
+                age = int.Parse(Console.ReadLine());
             }
             catch
             {
-                Console.WriteLine("Det var inte en korrekt input, försök igen..");
+                Console.WriteLine("Invalid input, try again ..");
             }
 
-            //try user age int parse googla det
-            //ev loop.
+            Console.Write("Enter your Street Address: ");
+            string streetAddress = Console.ReadLine();
 
-            Console.Write("Ange din Gatuaderss: ");
+            Console.Write("Enter your Postcode: ");
             try
             {
-                user.StreetAddress = Console.ReadLine();
+                postNumber = int.Parse(Console.ReadLine());
             }
             catch
             {
-                Console.WriteLine("Det var inte en korrekt input, försök igen..");
+                Console.Clear();
+                Console.WriteLine("Invalid input, try again..");
             }
 
-            Console.Write("Ange ditt Postnummer: ");
-            try
-            {
-               // user.PostNumber = Convert.ToInt32(Console.ReadLine());
-                user.PostNumber = int.Parse(Console.ReadLine());
-            }
-            catch
-            {
-                Console.WriteLine("Det var inte en korrekt input, försök igen..");
-            }
+            User user = new User(name, age, streetAddress, postNumber);
+            LoginUser.currentUser = user;
 
-            //Console.Write("Antal sökningar: ");
-            user.NumberOfSearch = 0;
+            Console.WriteLine("You got ID: {0}", user.ID);
+            Console.WriteLine("Remember it, you will use it to log in... ");
 
-            // Antal registerade Marshaller - osäker på hur jag ska få in detta här
-            //Console.Write("Antal registerade Marshaller: ");
-            user.NumberOfSearch = 0;
-
-            // Antal borttappade tändare - osäker på hur jag ska få in detta här men ska göra ev en count
-            //Console.Write("Antal borttappade tändare: ");
-            user.LostLighters = 0;
-
-            Lists.UserList.userList.Add(user);
+            Console.WriteLine("Press any key to clear console and return to main menu...");
+            Console.ReadKey();
+            Console.Clear();
+            Menus.MenuAtLogin.LoginMenu();
         }
-
-
-
     }
 }
