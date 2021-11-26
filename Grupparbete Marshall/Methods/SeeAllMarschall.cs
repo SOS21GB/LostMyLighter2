@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Grupparbete_Marshall.Methods
 {
     class SeeAllMarschall
-    { 
-       
+    {
+
     }
 }

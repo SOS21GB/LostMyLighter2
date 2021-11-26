@@ -83,8 +83,8 @@ namespace Grupparbete_Marshall.Menus
 
                     case 8:
                         User.FoundMarschallScore();
-                        break;                   
-                    
+                        break;
+
                     case 0:
                         Console.WriteLine("Exit program!");
                         break;

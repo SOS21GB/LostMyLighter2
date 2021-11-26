@@ -90,7 +90,7 @@ namespace Grupparbete_Marshall.Classes
                 Console.WriteLine("Registered at: {0}", m.reg_stamp);
                 Console.WriteLine("Burnes out at: {0}", m.burnout);
                 Console.WriteLine("Registered by: {0}", User.GetUserName(m.reg_user));
-                
+
             }
 
             Console.WriteLine("Press any key to clear console and return to main menu...");

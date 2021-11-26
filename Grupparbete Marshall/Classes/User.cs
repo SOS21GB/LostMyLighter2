@@ -71,7 +71,7 @@ namespace Grupparbete_Marshall.Classes
             Console.WriteLine("Street Adress:{0}", user._streetAddress);
             Console.WriteLine("Post Number:{0}", user._postNumber);
             Console.WriteLine("Number Of Seach:{0}", user._numberOfSearch);
-            Console.WriteLine("Found Marchall:{0}", user._foundMarschall);
+            Console.WriteLine("Found Marchalls:{0}", user._foundMarschall);
             Console.WriteLine("Lost Lighters:{0}", user._lostLighters);
 
             Console.WriteLine("Press any key to clear console and return to main menu...");
