@@ -28,7 +28,11 @@ namespace Grupparbete_Marshall.Methods
             }
             catch
             {
+
+                Console.Clear();
+
                 Console.WriteLine("Invalid input, try again..");
+
             }
 
             Console.Write("Enter the postal code where the marschall is located: ");
@@ -38,7 +42,10 @@ namespace Grupparbete_Marshall.Methods
             }
             catch
             {
+
+                Console.Clear();
                 Console.WriteLine("Invalid input, try again..");
+
             }
 
             Console.Write("Enter the marschall's burning time in minutes: ");
@@ -48,7 +55,10 @@ namespace Grupparbete_Marshall.Methods
             }
             catch
             {
+
+                Console.Clear();
                 Console.WriteLine("Invalid input, try again..");
+
             }
 
             Console.WriteLine("The marschall was registered at {0}", DateTime.Now);

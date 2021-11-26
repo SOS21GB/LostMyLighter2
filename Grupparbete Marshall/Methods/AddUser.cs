@@ -41,7 +41,10 @@ namespace Grupparbete_Marshall.Methods
             }
             catch
             {
+
+                Console.Clear(); 
                 Console.WriteLine("Invalid input, try again..");
+
             }
 
             User user = new User(name, age, streetAddress, postNumber);
