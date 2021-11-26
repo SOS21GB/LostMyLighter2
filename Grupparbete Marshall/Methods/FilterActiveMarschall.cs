@@ -26,7 +26,7 @@ namespace Grupparbete_Marshall.Methods
 
             foreach (Marschall marschall in matchingMarschalls)
             {
-                Classes.Marschall.PrintMarschall(marschall);
+                Marschall.PrintMarschall(marschall);
             }
 
             Console.WriteLine("\n Press any key to return to Main menu");
