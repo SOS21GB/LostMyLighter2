@@ -34,7 +34,7 @@ ______________ ______________    ___________ _______  ________ ._.
             if (result.ToUpper() == "YES")
             {
                 Console.WriteLine("Thank you for giving us feedback!");
-                Console.WriteLine("Scale 1 to 5, How you thaught it was?: ");
+                Console.WriteLine("On a scale of 1 to 5, how much did you enjoy this app?: ");
                 int tal = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
 
