@@ -10,8 +10,25 @@ namespace Grupparbete_Marshall.Methods
 
         public static void UserLogin()
         {
-            Console.WriteLine("Please enter your user ID: ");
-            int id = int.Parse(Console.ReadLine());
+            bool isInvalidInput = false;
+            int id = 0;
+            do
+            {
+                Console.WriteLine("Please enter your user ID: ");
+                try
+                {
+                    id = int.Parse(Console.ReadLine());
+                    isInvalidInput = false;
+                    break;
+                }
+
+                catch
+                {
+                    Console.WriteLine("Invalid input, try again...");
+                    isInvalidInput = true;
+                }                
+                
+            } while (isInvalidInput);
 
             currentUser = User.GetUserById(id);
 
