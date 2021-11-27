@@ -13,8 +13,8 @@ namespace Grupparbete_Marshall.Classes
             new User("Anders Andersson", 30, "Exempeladress 1", 40010, 0, 0, 0);
             new User("Anders Johansson", 30, "Exempeladress 2", 40010, 0, 0, 0);
             new User("Anders Göransson", 30, "Exempeladress 3", 40010, 0, 0, 5);
-            new User("Anders Nilsson", 30, "Exempeladress 4", 40010, 0, 0, 0);
-            new User("Anders Olsson", 30, "Exempeladress 5", 40010, 0, 0, 0);
+            new User("Anders Nilsson",   30, "Exempeladress 4", 40010, 0, 0, 0);
+            new User("Anders Olsson",    30, "Exempeladress 5", 40010, 0, 0, 0);
         }
 
         private int _id;
@@ -61,14 +61,14 @@ namespace Grupparbete_Marshall.Classes
 
         public static void PrintUser(User user)
         {
-            Console.WriteLine("ID:{0}", user._id);
-            Console.WriteLine("Name:{0}", user._name);
-            Console.WriteLine("Age:{0}", user._age);
-            Console.WriteLine("Street Adress:{0}", user._streetAddress);
-            Console.WriteLine("Post Number:{0}", user._postNumber);
-            Console.WriteLine("Number Of Search:{0}", user._numberOfSearch);
-            Console.WriteLine("Found Marchall:{0}", user._foundMarschall);
-            Console.WriteLine("Lost Lighters:{0}", user._lostLighters);
+            Console.WriteLine("ID: {0}", user._id);
+            Console.WriteLine("Name: {0}", user._name);
+            Console.WriteLine("Age: {0}", user._age);
+            Console.WriteLine("Street Adress: {0}", user._streetAddress);
+            Console.WriteLine($"Post Number: {user._postNumber/100} {user._postNumber % 100}");
+            Console.WriteLine("Number Of Search: {0}", user._numberOfSearch);
+            Console.WriteLine("Found Marchall: {0}", user._foundMarschall);
+            Console.WriteLine("Lost Lighters: {0}", user._lostLighters);
 
             Console.WriteLine("Press any key to clear console and return to main menu...");
             Console.ReadKey();

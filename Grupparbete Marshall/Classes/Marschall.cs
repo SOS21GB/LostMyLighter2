@@ -89,18 +89,31 @@ namespace Grupparbete_Marshall.Classes
 
         public static void PrintMarschall(Marschall marschall)
         {
-            Console.WriteLine("ID:{0}", marschall.id);
-            Console.WriteLine("Brand:{0}", marschall.brand);
-            Console.WriteLine("Street:{0} {1}", marschall.streetName, marschall.streetName == "unknown" ? "" : marschall.streetNumber);
-            Console.WriteLine("Postalcode:{0}", marschall.postalCode);
+            Console.WriteLine("ID: {0}", marschall.id);
+            Console.WriteLine("Brand: {0}", marschall.brand);
+            Console.WriteLine("Street: {0} {1}", marschall.streetName, marschall.streetName == "unknown" ? "" : marschall.streetNumber);
+            Console.WriteLine($"Postalcode: {marschall.postalCode/100} {marschall.postalCode%100}");
             Console.WriteLine("Registered by: {0}", User.GetUserName(marschall.reg_user));
             Console.WriteLine();
         }
 
         public static void PrintActiveMarschall()
         {
-            var activeMarschall = marschallList.Where(marschall => marschall.burnout > DateTime.Now);
+            var activeMarschall = marschallList.Where(marschall => marschall.Burnout > DateTime.Now);
             foreach (Marschall m in activeMarschall)
+            {
+                PrintMarschall(m);
+            }
+
+            Console.WriteLine("Press any key to clear console and return to main menu...");
+            Console.ReadKey();
+            Console.Clear();
+            Menus.MenuAtLogin.LoginMenu();
+        }
+
+        public static void PrintUserMarschall(User user)
+        {
+            foreach (Marschall m in marschallList.Where(marschall => marschall.RegUser.Equals(user)))
             {
                 PrintMarschall(m);
             }

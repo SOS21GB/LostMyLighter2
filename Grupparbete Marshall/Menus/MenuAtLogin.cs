@@ -20,13 +20,14 @@ namespace Grupparbete_Marshall.Menus
 1. List all registered marschalls
 2. List all active marschalls
 3. Filter marschalls by postalcode
-4. Show profile
-5. Change user profile
+4. List all your marschalls
+5. Show profile
+6. Change user profile
 
-6. Register a lost lighter
-7. Highscore amount of lost lighters
-8. Highscore amount of found marschalls
-9. Log out");
+7. Register a lost lighter
+8. Highscore amount of lost lighters
+9. Highscore amount of found marschalls
+10. Log out");
 
                     try
                     {
@@ -60,26 +61,29 @@ namespace Grupparbete_Marshall.Menus
                         break;
 
                     case 4:
+                        Marschall.PrintUserMarschall(LoginUser.currentUser);
+                        break;
+                    case 5:
                         User.PrintUser(LoginUser.currentUser);
                         break;
 
-                    case 5:
+                    case 6:
                         User.EditUserMethod(LoginUser.currentUser);
                         break;
 
-                    case 6:
+                    case 7:
                         User.AddLostLighter(LoginUser.currentUser);
                         break;
 
-                    case 7:
+                    case 8:
                         User.LighterHighScore();
                         break;
 
-                    case 8:
+                    case 9:
                         User.FoundMarschallScore();
                         break;
 
-                    case 9:
+                    case 10:
                         Startmenu.RunStartMenu();
                         break;
 
